@@ -1,156 +1,91 @@
-<!--  
-  STYLE DE LANDING PAGE — JOLAN  
-  Minimaliste, modulaire, lisible, professionnel
--->
+<!-- Ultra-clean Landing Page GitHub Profile – Jolan -->
 
 <div align="center">
 
-# 🚀 Jolan  
-### **Systems, Networks & Cybersecurity Engineer**  
-Crafting secure, automated & resilient infrastructures.
+# 👋 Hi, I'm **Jolan**
+
+### **Systems · Cybersecurity · Cloud · Automation**
+
+Minimal. Secure. Reliable.
 
 ---
-
-### 🜁 **Tech Architect** • 🜂 **Cybersecurity** • 🜃 **Cloud & Automation** • 🜄 **Documentation Engineering**
-
-<br>
-
-![divider](https://img.shields.io/badge/—-0E3F43?style=flat-square)
 
 </div>
 
 <br>
 
----
-
-# 🧩 **1. About Me – The Short Story**
-
-I design, build and maintain **secure, documented, production-grade infrastructures**.  
-My work lives à l’intersection entre **cybersécurité**, **architecture système**,  
-**automatisation**, et **gouvernance technique**.
-
-J’aime les environnements qui restent :  
-• **Robustes**  
-• **Prévisibles**  
-• **Auditables**  
-• **Auto-documentés**
-
-Et je construis mes outils et mes méthodologies dans ce sens.
-
-<br>
-
----
-
-# 🏛️ **2. Personal Infrastructure (Private but Engineered)**  
-### *A production-grade platform used as an engineering sandbox.*
-
-🔒 **Principes affichés (sans stack dévoilée)**  
-- Architecture cloisonnée orientée sécurité & disponibilité  
-- Orchestration automatisée (déploiements reproductibles)  
-- Sauvegardes, monitoring, identité & conformité intégrés  
-- Documentation vivante & versionnée  
-- Services critiques répartis, isolés et supervisés  
-- Plateforme pensée comme un **mini-SaaS privé**
-
-🎯 **Pourquoi c’est là ?**  
-Parce qu’un ingénieur sérieux teste, construit, casse, recrée.  
-C’est ma vitrine silencieuse : ce que je fais, je le fais proprement.
-
-<br>
-
----
-
-# 🧬 **3. Core Skills — My Stack in Concepts, Not Tools**
-
-## 🔐 Cybersecurity  
-**Hardening**, ISO-style thinking, IAM, gouvernance, EBIOS RM, conformité,  
-audit technique, architecture sécurisée, minimisation d’exposition.
-
-## ⚙️ Infrastructure Engineering  
-Linux, réseaux, segmentation, infra hybride, haute disponibilité,  
-gestion de services & systèmes critiques.
-
-## ☁️ Cloud & Automation  
-Templates, CI/CD basique, Ansible-style workflows, infra reproductible,  
-gestion centralisée de configs & secrets.
-
-## 🧭 Knowledge & Documentation  
-MARP, Obsidian, modèles de documentation technique, diagrammes d’architecture,  
-procédures, exploitation & continuité.
-
-<br>
-
----
-
-# 🧱 **4. Highlighted Projects**
-
-## 🔐 pve-hardener  
-*Security-focused auditing & hardening framework.*  
-Infrastructure hardening, YAML plans, documentation intégrée, approche conformité.
-
-👉 **Public release en construction**
-
----
-
-## 🗂️ MARP Themes Library  
-Pack de thèmes premium pour présentations techniques (IAE, consulting, cyber…).  
-Design élégant, cohérent, modulable.
-
-👉 Parfaits pour enseignement, consulting, rapports.
-
----
-
-## 🧰 Setup & Automation Tools  
-Petites briques élégantes :  
-- Config generators  
-- Setup assistants  
-- Windows/CLI utilities  
-- Templates documentaires réutilisables
-
-Pas de bullshit, que du pratique.
-
-<br>
-
----
-
-# 🌐 **5. My Ecosystem**
-
-### 🎞️ Photography – *Secondary Activity*  
-Travel, adventure & Nordic storytelling.  
-Portfolio → **https://jolandmt.com**
-
-### 🛒 Print Shop  
-Calendars, prints, éditions limitées.  
-→ **https://shop.jolandmt.com**
-
-### 💼 Consulting / Cyber / SI  
-Identity en cours de structuration.
-
-<br>
-
----
-
-# 🧭 **6. What I’m Exploring Right Now**
-
-- Patterns d’automatisation pour infrastructures hybrides  
-- Alignement gouvernance / cybersécurité / exploitation  
-- Documentation d’architecture pérenne  
-- Approches de sécurité-by-design industrialisables  
-
-<br>
-
----
-
-# 📫 **7. Contact**
-
-- LinkedIn → **[https://linkedin.com/in/jolandmt](https://www.linkedin.com/in/jolandemottie/)**  
-- Email → via portfolio  
+## ⚡ Expertise
 
 <div align="center">
 
----
+| **Infrastructure** | **Security** | **Automation** | **Documentation** |
+|-------------------|--------------|----------------|-------------------|
+| Linux · Networks | Hardening · IAM | IaC · CI/CD | MARP · Obsidian |
 
-### **— Minimal. Structured. Secure. Engineered. —**  
-*My work speaks through clarity and design.*
+</div>
+
+<br>
+
+## 🧩 Skillset
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Linux-0E3F43?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/Security-0E3F43?style=for-the-badge&logo=secure&logoColor=white" />
+<img src="https://img.shields.io/badge/Automation-0E3F43?style=for-the-badge&logo=ansible&logoColor=white" />
+<img src="https://img.shields.io/badge/Cloud-0E3F43?style=for-the-badge&logo=cloudflare&logoColor=white" />
+<img src="https://img.shields.io/badge/Documentation-0E3F43?style=for-the-badge&logo=markdown&logoColor=white" />
+
+</div>
+
+<br>
+
+## 🧱 Projects
+
+**pve-hardener**  
+Security baseline & audit framework for hardened infra.  
+*Public release in progress.*
+
+**MARP Themes**  
+Clean, unified styles for tech presentations (cyber, consulting, academia).
+
+**Setup Tools**  
+Small CLI utilities for reproducible configs & deployments.
+
+<br>
+
+## 🏛️ Private Infrastructure
+
+I run a **production-grade private stack** focusing on:  
+- isolation  
+- security-by-design  
+- automation  
+- documented services  
+(tech details intentionally anonymized)
+
+This is my engineering lab, not a playground.
+
+<br>
+
+## 🌐 Web
+
+- **Portfolio** → https://jolandmt.com  
+- **Shop** → https://shop.jolandmt.com
+
+<br>
+
+## 📊 GitHub
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=jolandmt&show_icons=true&hide_title=true&hide=prs&theme=dark&bg_color=0E3F43&icon_color=ffffff&text_color=ffffff&hide_border=true" height="130"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
+### **— Clean. Secure. Engineered. —**
 
 </div>
