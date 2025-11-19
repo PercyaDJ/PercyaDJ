@@ -1,61 +1,85 @@
-# <FULL_NAME> — <MAIN_ROLE>
+<!--
+Primary color: #0E3F43
+Secondary color: #1A5C60
+Single-page premium layout with glass-like blocks.
+-->
 
 <div align="center">
-<img src="<ICON_URL_PLACEHOLDER>" width="120" />
+
+# Jolan Dmt  
+### Cybersecurity & Systems Architecture
+
+<br>
+
+<!-- HERO GLASS BLOCK -->
+<div style="padding: 24px; border-radius: 18px; background: rgba(255,255,255,0.06); backdrop-filter: blur(14px); max-width: 520px; border: 1px solid rgba(255,255,255,0.14);">
+Strategic security and architecture for resilient, controlled systems.  
+Designing clarity, reducing exposure, and shaping long-term foundations.
 </div>
 
-## Precision. Clarity. Systems at Scale.
-Senior focus on risk, architecture, and resilient cloud systems.  
-Solving complexity through structure and secure design.
+<br>
+</div>
 
 ---
 
 ## Architecture Concept Map
+
 ```
-Business → Risk → Architecture → Systems Design → Implementation → Ops
+Context → Risk → Architecture → Principles → System Design → Delivery → Operations
 ```
+
+A systemic method guiding each decision to minimize ambiguity and reinforce security.
 
 ---
 
 ## Security Mindset
-- Reduce exposure through systemic design  
-- Control complexity before scaling anything  
-- Prioritize threat‑driven architecture choices  
-- Automate consistency, validate assumptions  
-- Build defensible, observable infrastructures  
+
+- Reduce exposure through structural choices  
+- Control complexity before scaling  
+- Make threat-driven design decisions  
+- Automate consistency and validation  
+- Treat observability as a security function  
+- Prefer minimal, defensible architectures  
 
 ---
 
-## Skill Radar
-| Domain           | Level     |
-|------------------|-----------|
-| Cloud            | ●●●●○ |
-| Security         | ●●●●○ |
-| Infra & Ops      | ●●●●○ |
-| Automation       | ●●●●○ |
-| Observability    | ●●●○○ |
-| Architecture     | ●●●●○ |
+## Core Expertise
+
+**Cybersecurity & Governance**  
+Risk modeling, exposure control, secure boundaries, identity architecture.
+
+**Architecture & Infrastructure**  
+Cloud foundations, modular systems, high-reliability infrastructure.
+
+**Automation & Reliability**  
+Deterministic deployments via Ansible, CI/CD-driven lifecycle management.
+
+**Systems & Ops**  
+Linux, virtualization, network segmentation, secure service hosting.
 
 ---
 
-## Core Stack & Tools
-**Cloud**: <STACK_LIST>  
-**Infra**: Terraform, Linux, Proxmox  
-**Security**: IAM, Zero‑Trust, Hardening  
-**Automation**: Ansible, CI/CD  
+## Selected Stack
+
+**Cloud & Infra**: Proxmox, Linux, Terraform, Cloudflare  
+**Security**: IAM, RBAC, Zero-Trust, TLS, Hardening  
+**Automation**: Ansible, CI/CD workflows  
 **Observability**: Grafana, Prometheus  
 
 ---
 
 ## Current Focus
-Exploring scalable secure architectures.  
-Refining automation for reproducible infra.  
-Designing cloud‑native patterns for resilience.  
-Open to high‑impact security and architecture work.
+
+Designing secure personal cloud ecosystems.  
+Refining reproducible infrastructure pipelines.  
+Integrating architecture thinking across cloud and systems.  
+Exploring advanced risk-driven models.
 
 ---
 
 ## Links
-Portfolio: <PORTFOLIO_URL>  
-LinkedIn: <LINKEDIN_URL>  
-GitHub: https://github.com/<GITHUB_USERNAME>
+
+Portfolio: https://jolandmt.com  
+Cyber consulting: https://jd-secure.fr  
+LinkedIn: https://linkedin.com/in/jolandmt  
+GitHub: https://github.com/<USERNAME>
