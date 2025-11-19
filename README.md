@@ -1,89 +1,156 @@
+<!--  
+  STYLE DE LANDING PAGE — JOLAN  
+  Minimaliste, modulaire, lisible, professionnel
+-->
+
 <div align="center">
 
-# 👋 Hi, I'm Jolan  
-**Systems, Networks & Cybersecurity — Infrastructure Engineer**
+# 🚀 Jolan  
+### **Systems, Networks & Cybersecurity Engineer**  
+Crafting secure, automated & resilient infrastructures.
 
-<img src="https://img.shields.io/badge/Cybersecurity-0E3F43?style=for-the-badge&logo=shield" />
-<img src="https://img.shields.io/badge/Infrastructure-0E3F43?style=for-the-badge&logo=linux" />
-<img src="https://img.shields.io/badge/Cloud%20&%20Automation-0E3F43?style=for-the-badge&logo=ansible" />
+---
+
+### 🜁 **Tech Architect** • 🜂 **Cybersecurity** • 🜃 **Cloud & Automation** • 🜄 **Documentation Engineering**
+
+<br>
+
+![divider](https://img.shields.io/badge/—-0E3F43?style=flat-square)
 
 </div>
 
----
-
-## 🧭 About me
-
-Infrastructure & cybersecurity engineer focused on **secure-by-design architectures**, **automation**, and **long-term maintainability**.  
-
-I build systems that are clean, documented and resilient.  
-My work combines security, infrastructure thinking, and a strong emphasis on governance.
+<br>
 
 ---
 
-## 🏛️ Personal Infrastructure
+# 🧩 **1. About Me – The Short Story**
 
-I operate a **private production-grade server environment** used as a long-term engineering lab.  
-It includes:
+I design, build and maintain **secure, documented, production-grade infrastructures**.  
+My work lives à l’intersection entre **cybersécurité**, **architecture système**,  
+**automatisation**, et **gouvernance technique**.
 
-- A full **service ecosystem**, designed around security, isolation and reliability  
-- Automated deployment workflows for containers, VMs and applications  
-- Centralized identity, monitoring, backups and configuration management  
-- Architecture documented to ensure **repeatability**, **audits**, and **incident resilience**
+J’aime les environnements qui restent :  
+• **Robustes**  
+• **Prévisibles**  
+• **Auditables**  
+• **Auto-documentés**
 
-No technical details or topology are disclosed publicly, but the platform demonstrates  
-my ability to design, maintain and secure a complete infrastructure from scratch.
+Et je construis mes outils et mes méthodologies dans ce sens.
 
----
-
-## 📂 Selected public projects
-
-### 🔐 Infrastructure & Security Automation  
-Tools and frameworks aimed at improving reliability, documentation and hardening.  
-Public versions include:
-- **pve-hardener** → compliance-style audits & secure configurations  
-- **CLI utilities** for setup automation and configuration templating  
-- **MARP themes** for technical documentation & presentations
-
-### 💡 Engineering Demos & Templates  
-Reusable components for documentation, architecture diagrams, notebooks  
-and technical reports (Obsidian + Marp ecosystem).
+<br>
 
 ---
 
-## 🌐 Websites & Ecosystem
+# 🏛️ **2. Personal Infrastructure (Private but Engineered)**  
+### *A production-grade platform used as an engineering sandbox.*
 
-- **Portfolio photo** → https://jolandmt.com  
-- **Shop** → https://shop.jolandmt.com  
-- **Tech/consulting identity** → *(à venir)*  
-- **Documentation & knowledge system** → *(private)*  
+🔒 **Principes affichés (sans stack dévoilée)**  
+- Architecture cloisonnée orientée sécurité & disponibilité  
+- Orchestration automatisée (déploiements reproductibles)  
+- Sauvegardes, monitoring, identité & conformité intégrés  
+- Documentation vivante & versionnée  
+- Services critiques répartis, isolés et supervisés  
+- Plateforme pensée comme un **mini-SaaS privé**
 
----
+🎯 **Pourquoi c’est là ?**  
+Parce qu’un ingénieur sérieux teste, construit, casse, recrée.  
+C’est ma vitrine silencieuse : ce que je fais, je le fais proprement.
 
-## 🎓 Areas of expertise
-
-- Cybersecurity operations & governance  
-- Infrastructure design (on-premise & cloud)  
-- System administration & network fundamentals  
-- Architecture thinking, automation & reproducibility  
-- Secure workflows & documentation lifecycle  
-
----
-
-## 🎒 Photography (Secondary Activity)
-
-Travel & adventure photographer with a focus on northern environments,  
-visual storytelling and minimalist composition.  
-My work is visible on → https://jolandmt.com
+<br>
 
 ---
 
-## 📫 Contact
+# 🧬 **3. Core Skills — My Stack in Concepts, Not Tools**
 
-- LinkedIn → https://linkedin.com/in/jolandmt  
-- Email → *(via portfolio)*  
+## 🔐 Cybersecurity  
+**Hardening**, ISO-style thinking, IAM, gouvernance, EBIOS RM, conformité,  
+audit technique, architecture sécurisée, minimisation d’exposition.
+
+## ⚙️ Infrastructure Engineering  
+Linux, réseaux, segmentation, infra hybride, haute disponibilité,  
+gestion de services & systèmes critiques.
+
+## ☁️ Cloud & Automation  
+Templates, CI/CD basique, Ansible-style workflows, infra reproductible,  
+gestion centralisée de configs & secrets.
+
+## 🧭 Knowledge & Documentation  
+MARP, Obsidian, modèles de documentation technique, diagrammes d’architecture,  
+procédures, exploitation & continuité.
+
+<br>
+
+---
+
+# 🧱 **4. Highlighted Projects**
+
+## 🔐 pve-hardener  
+*Security-focused auditing & hardening framework.*  
+Infrastructure hardening, YAML plans, documentation intégrée, approche conformité.
+
+👉 **Public release en construction**
+
+---
+
+## 🗂️ MARP Themes Library  
+Pack de thèmes premium pour présentations techniques (IAE, consulting, cyber…).  
+Design élégant, cohérent, modulable.
+
+👉 Parfaits pour enseignement, consulting, rapports.
+
+---
+
+## 🧰 Setup & Automation Tools  
+Petites briques élégantes :  
+- Config generators  
+- Setup assistants  
+- Windows/CLI utilities  
+- Templates documentaires réutilisables
+
+Pas de bullshit, que du pratique.
+
+<br>
+
+---
+
+# 🌐 **5. My Ecosystem**
+
+### 🎞️ Photography – *Secondary Activity*  
+Travel, adventure & Nordic storytelling.  
+Portfolio → **https://jolandmt.com**
+
+### 🛒 Print Shop  
+Calendars, prints, éditions limitées.  
+→ **https://shop.jolandmt.com**
+
+### 💼 Consulting / Cyber / SI  
+Identity en cours de structuration.
+
+<br>
+
+---
+
+# 🧭 **6. What I’m Exploring Right Now**
+
+- Patterns d’automatisation pour infrastructures hybrides  
+- Alignement gouvernance / cybersécurité / exploitation  
+- Documentation d’architecture pérenne  
+- Approches de sécurité-by-design industrialisables  
+
+<br>
+
+---
+
+# 📫 **7. Contact**
+
+- LinkedIn → **[https://linkedin.com/in/jolandmt](https://www.linkedin.com/in/jolandemottie/)**  
+- Email → via portfolio  
 
 <div align="center">
 
-### — Professional, secure and thoughtfully engineered —
+---
+
+### **— Minimal. Structured. Secure. Engineered. —**  
+*My work speaks through clarity and design.*
 
 </div>
