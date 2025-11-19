@@ -4,15 +4,6 @@
 
 ---
 
-<div align="center">
-
-Strategic security and architecture for resilient, controlled systems.  
-Designing clarity, reducing exposure, and shaping long-term foundations.
-
-</div>
-
----
-
 ## Architecture Concept Map
 
 <div align="center">
