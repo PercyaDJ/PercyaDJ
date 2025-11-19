@@ -61,6 +61,8 @@ A systemic, risk-driven approach to design and evolve infrastructure:
 
 ## Tech Stack Overview
 
+<div align="center">
+
 <table>
   <tr>
     <th>Cloud & Infra</th>
@@ -73,14 +75,12 @@ A systemic, risk-driven approach to design and evolve infrastructure:
 
 <img src="https://img.shields.io/badge/Proxmox-0E3F43?style=for-the-badge&logo=proxmox&logoColor=white" alt="Proxmox" /><br>
 <img src="https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=white" alt="Linux" /><br>
-<img src="https://img.shields.io/badge/Terraform-7B42F6?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform" /><br>
 <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" />
 
   </td>
   <td>
 
 <img src="https://img.shields.io/badge/IAM-0E3F43?style=for-the-badge" alt="IAM" /><br>
-<img src="https://img.shields.io/badge/RBAC-0F766E?style=for-the-badge" alt="RBAC" /><br>
 <img src="https://img.shields.io/badge/Zero--Trust-111827?style=for-the-badge" alt="Zero Trust" /><br>
 <img src="https://img.shields.io/badge/Hardening-1F2937?style=for-the-badge" alt="Hardening" />
 
