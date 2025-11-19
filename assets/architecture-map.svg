@@ -1,6 +1,6 @@
-<svg width="1000" height="180" viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Architecture Concept Map</title>
-  <desc id="desc">Linear flow from context and risk to operations.</desc>
+<svg width="1000" height="200" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture Approach Map</title>
+  <desc id="desc">Flow from understanding context to secure operations.</desc>
   <defs>
     <linearGradient id="nodeGradient" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0E3F43"/>
@@ -8,50 +8,50 @@
     </linearGradient>
   </defs>
 
-  <rect x="0" y="0" width="1000" height="180" fill="#020617"/>
+  <rect x="0" y="0" width="1000" height="200" fill="#020617"/>
 
   <!-- Nodes -->
   <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">
     <g>
-      <rect x="40" y="55" width="130" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
-      <text x="105" y="90" fill="#E5E7EB">Context</text>
-      <text x="105" y="110" fill="#9CA3AF">Constraints, actors</text>
+      <rect x="30" y="60" width="135" height="80" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="97" y="95" fill="#E5E7EB">Understand</text>
+      <text x="97" y="115" fill="#9CA3AF">Context, constraints</text>
     </g>
     <g>
-      <rect x="210" y="55" width="130" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
-      <text x="275" y="90" fill="#E5E7EB">Risk</text>
-      <text x="275" y="110" fill="#9CA3AF">Threats, impact</text>
+      <rect x="200" y="60" width="135" height="80" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="267" y="95" fill="#E5E7EB">Model</text>
+      <text x="267" y="115" fill="#9CA3AF">Services, flows</text>
     </g>
     <g>
-      <rect x="380" y="55" width="140" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
-      <text x="450" y="90" fill="#E5E7EB">Architecture</text>
-      <text x="450" y="110" fill="#9CA3AF">Structures, boundaries</text>
+      <rect x="370" y="60" width="135" height="80" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="437" y="95" fill="#E5E7EB">Isolate</text>
+      <text x="437" y="115" fill="#9CA3AF">Boundaries, exposure</text>
     </g>
     <g>
-      <rect x="560" y="55" width="150" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
-      <text x="635" y="90" fill="#E5E7EB">Principles</text>
-      <text x="635" y="110" fill="#9CA3AF">Rules, trade-offs</text>
+      <rect x="540" y="60" width="135" height="80" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="607" y="95" fill="#E5E7EB">Simplify</text>
+      <text x="607" y="115" fill="#9CA3AF">Reduce complexity</text>
     </g>
     <g>
-      <rect x="750" y="40" width="180" height="60" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
-      <text x="840" y="70" fill="#E5E7EB">System Design</text>
+      <rect x="710" y="40" width="135" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="777" y="75" fill="#E5E7EB">Secure</text>
     </g>
     <g>
-      <rect x="750" y="110" width="180" height="60" rx="12" ry="12" fill="#020617" stroke="#4ADE80" stroke-dasharray="4 4" stroke-opacity="0.7"/>
-      <text x="840" y="140" fill="#9CA3AF">Delivery → Operations</text>
+      <rect x="710" y="120" width="180" height="60" rx="12" ry="12" fill="#020617" stroke="#4ADE80" stroke-dasharray="4 4" stroke-opacity="0.7"/>
+      <text x="800" y="150" fill="#9CA3AF">Operate &amp; improve</text>
     </g>
   </g>
 
   <!-- Arrows -->
   <g stroke="#38BDF8" stroke-width="2" stroke-linecap="round">
-    <line x1="170" y1="90" x2="210" y2="90"/>
-    <line x1="340" y1="90" x2="380" y2="90"/>
-    <line x1="520" y1="90" x2="560" y2="90"/>
-    <line x1="710" y1="75" x2="750" y2="70"/>
+    <line x1="165" y1="100" x2="200" y2="100"/>
+    <line x1="335" y1="100" x2="370" y2="100"/>
+    <line x1="505" y1="100" x2="540" y2="100"/>
+    <line x1="675" y1="80" x2="710" y2="75"/>
   </g>
 
-  <!-- Small connectors to delivery/operations -->
+  <!-- Small connector to operate -->
   <g stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="5 4">
-    <line x1="840" y1="100" x2="840" y2="110"/>
+    <line x1="777" y1="110" x2="777" y2="120"/>
   </g>
 </svg>

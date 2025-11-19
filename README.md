@@ -1,109 +1,137 @@
+<!--
+GitHub profile mini-site for: Jolan Dmt (PercyaDJ)
+Glassmorphism-inspired, single-page layout using Markdown + SVG assets.
+Content is aligned with real skills: systems, security, homelab architecture.
+-->
+
 <div align="center">
-<img src="assets/header-glass.svg" alt="Jolan Dmt — Cybersecurity & Systems Architecture" width="100%" />
+
+# Jolan Dmt
+
+**Security-Oriented Systems & Infrastructure Design**
+
+<br>
+
+<img src="assets/header-glass.svg" alt="Jolan Dmt — Security-Oriented Systems & Infrastructure Design" width="100%" />
+
 </div>
 
 ---
 
-## Architecture Concept Map
+<div align="center">
+
+Designing small-scale but robust infrastructure with clarity, security, and long-term thinking.
+
+</div>
+
+---
+
+## Architecture Approach
 
 <div align="center">
-  <img src="assets/architecture-map.svg" alt="Architecture Concept Map" width="90%" />
+  <img src="assets/architecture-map.svg" alt="Architecture Approach Map" width="90%" />
 </div>
 
 **Method**  
-A systemic, risk-driven approach to design and evolve infrastructure:
+I design and operate systems using a clear, security-aware flow:
 
-- Make risk and constraints explicit before building.  
-- Align architecture with operations from day zero.  
-- Prefer simple, defensible structures over fragile complexity.
+- Understand context and constraints before any deployment.  
+- Model services, data flows, and dependencies.  
+- Isolate components and reduce unnecessary exposure.  
+- Simplify where possible to avoid fragile complexity.  
+- Secure by design, not by afterthought.  
+- Operate with monitoring, backup, and controlled change.
 
 ---
 
 ## Security Mindset
 
-- Reduce exposure through structural design choices.  
-- Control complexity before scaling anything.  
-- Make threat-driven decisions, not tool-driven ones.  
-- Automate consistency and verification of baselines.  
-- Use observability as a primary security signal.  
-- Build minimal, defensible, and maintainable systems.
+- Reduce attack surface through isolation and minimal exposure.  
+- Treat identity, access, and tunneling as first-class design elements.  
+- Prefer simple, well-understood components over fragile stacks.  
+- Design for rebuildability instead of manual, one-off setups.  
+- Use logs, metrics, and behaviour as signals for trust.  
+- Keep systems small, coherent, and explainable.
 
 ---
 
+## Domains & Strengths
+
 <div align="center">
-  <img src="assets/core-domains.svg" alt="Core Domains and Expertise" width="90%" />
+  <img src="assets/core-domains.svg" alt="Core Domains and Strengths" width="90%" />
 </div>
 
 ---
 
-## Tech Stack Overview
+## Systems & Homelab Architecture
 
+I spend most of my time designing, running, and refining a personal-scale infrastructure focused on privacy, clarity, and control.
 
-<div align="center">
-<table>
-  <tr>
-    <th>Cloud & Infra</th>
-    <th>Security</th>
-    <th>Automation</th>
-    <th>Observability</th>
-  </tr>
-  <tr>
-  <td>
+**Core building blocks**  
+- Proxmox VE with LXC and VMs  
+- Debian / Linux-based services  
+- Nextcloud as a personal cloud and knowledge hub  
+- Proxmox Backup Server for regular, verified backups  
+- WireGuard for remote, controlled access  
+- AdGuard for DNS filtering and privacy  
+- Cloudflare Tunnel for selected, hardened external exposure  
 
-<img src="https://img.shields.io/badge/Proxmox-0E3F43?style=for-the-badge&logo=proxmox&logoColor=white" alt="Proxmox" /><br>
-<img src="https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=white" alt="Linux" /><br>
-<img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" />
-
-  </td>
-  <td>
-
-<img src="https://img.shields.io/badge/IAM-0E3F43?style=for-the-badge" alt="IAM" /><br>
-<img src="https://img.shields.io/badge/Zero--Trust-111827?style=for-the-badge" alt="Zero Trust" /><br>
-<img src="https://img.shields.io/badge/Hardening-1F2937?style=for-the-badge" alt="Hardening" />
-
-  </td>
-  <td>
-
-<img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" alt="Ansible" /><br>
-<img src="https://img.shields.io/badge/CI%2FCD-2563EB?style=for-the-badge" alt="CI/CD" /><br>
-<img src="https://img.shields.io/badge/Git-111827?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-
-  </td>
-  <td>
-
-<img src="https://img.shields.io/badge/Grafana-F97316?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana" /><br>
-<img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus" /><br>
-<img src="https://img.shields.io/badge/Logging-0E3F43?style=for-the-badge" alt="Logging" />
-
-  </td>
-  </tr>
-</table>
-</div>
+**Design principles**  
+- Few services, well understood, properly isolated.  
+- LAN-first, internet exposure only when necessary.  
+- Clear mapping between services, hosts, and data.  
+- Documentation that explains how to rebuild from scratch.
 
 ---
 
-## GitHub Stats
+## Technology Snapshot
 
-<div align="center">
+**Systems & Virtualization**  
+- Proxmox VE  
+- Debian / Linux  
+- LXC / VM separation
 
-<img src="https://github-readme-stats.vercel.app/api?username=PercyaDJ&show_icons=true&hide_title=true&hide_rank=true&theme=github_dark&include_all_commits=true&count_private=true" alt="GitHub stats card" height="160" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PercyaDJ&layout=compact&theme=github_dark&hide_title=true" alt="Top languages" height="160" />
+**Networking & Access**  
+- WireGuard  
+- DNS configuration  
+- Cloudflare DNS and tunneling
 
-</div>
+**Services & Platforms**  
+- Nextcloud (personal cloud, documentation, sync)  
+- AdGuard (DNS filtering and privacy)  
+- Proxmox Backup Server
+
+**Practices**  
+- Risk-aware homelab design  
+- Minimal, auditable configurations  
+- Rebuild-focused documentation and structure
 
 ---
 
 ## Current Focus
 
-- Designing secure, private-cloud style environments at personal scale.  
-- Refining automation for deterministic, rebuildable infrastructure.  
-- Bringing architecture thinking to every layer: network, systems, and cloud.  
-- Documenting and structuring knowledge for long-term technical growth.
+- Hardening and documenting a coherent, Proxmox-based personal cloud.  
+- Refining backup, restore, and disaster recovery workflows.  
+- Improving observability with logs and lightweight monitoring.  
+- Turning real-world homelab lessons into reusable patterns.
+
+---
+
+## GitHub
+
+Here, I explore, prototype, and document ideas related to:
+
+- Personal-scale infrastructure and security.  
+- Homelab design and lifecycle.  
+- Tools, scripts, and patterns that make systems easier to understand and maintain.
 
 ---
 
 ## Links
 
-- Portfolio (photography): https://photo.jolandmt.com  
-- Cyber consulting: https://cyber.jolandmt.com 
-- LinkedIn: https://linkedin.com/in/jolandemottie
+- Photography portfolio: https://jolandmt.com  
+- Cyber and audit site: https://jd-secure.fr  
+- LinkedIn: https://linkedin.com/in/jolandmt  
+- GitHub profile: https://github.com/PercyaDJ
+
+---

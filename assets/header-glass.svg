@@ -1,5 +1,5 @@
 <svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Jolan Dmt — Cybersecurity &amp; Systems Architecture</title>
+  <title id="title">Jolan Dmt — Security-Oriented Systems &amp; Infrastructure Design</title>
   <desc id="desc">Glassmorphism-inspired header card for a GitHub profile.</desc>
   <defs>
     <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
@@ -31,17 +31,17 @@
 
   <!-- Text -->
   <g fill="#F9FAFB">
-    <text x="220" y="145" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="32" font-weight="600" letter-spacing="0.08em">
+    <text x="220" y="145" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="30" font-weight="600" letter-spacing="0.08em">
       JOLAN DMT
     </text>
-    <text x="220" y="185" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="20" fill="#E5E7EB">
-      Cybersecurity &amp; Systems Architecture
+    <text x="220" y="185" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="19" fill="#E5E7EB">
+      Security-Oriented Systems &amp; Infrastructure Design
     </text>
     <text x="220" y="225" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="15" fill="#CBD5F5">
-      Strategic security and architecture for resilient, controlled systems.
+      Designing small-scale but robust infrastructure with clarity and security.
     </text>
     <text x="220" y="250" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="15" fill="#CBD5F5">
-      Designing clarity, reducing exposure, and shaping long-term foundations.
+      Focused on isolation, minimal exposure, and long-term maintainability.
     </text>
   </g>
 
