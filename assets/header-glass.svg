@@ -21,7 +21,7 @@
   <rect x="0" y="0" width="1200" height="360" fill="url(#bgGradient)"/>
   <circle cx="1040" cy="20" r="260" fill="url(#accentGradient)" opacity="0.9"/>
 
-  <!-- Glass Card (approximation: white + low opacity + stroke) -->
+  <!-- Glass Card -->
   <g filter="url(#shadow)">
     <rect x="170" y="70" rx="26" ry="26" width="860" height="230" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.22"/>
   </g>
