@@ -1,47 +1,61 @@
-<div align="center">
-
-<img src="./assets/header-glass.svg" alt="Profile header" width="800"/>
-
-</div>
-
----
-
-## Snapshot
-
-| Role                    | Focus                               | Approach                           |
-|-------------------------|-------------------------------------|------------------------------------|
-| Infra & Security Engineer | Secure architectures · Automation · Documentation | Production mindset, even for personal labs |
+# <FULL_NAME> — <MAIN_ROLE>
 
 <div align="center">
-
-<img src="https://img.shields.io/badge/Linux-0E3F43?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/Security-0E3F43?style=for-the-badge&logo=shield&logoColor=white" />
-<img src="https://img.shields.io/badge/Automation-0E3F43?style=for-the-badge&logo=ansible&logoColor=white" />
-<img src="https://img.shields.io/badge/Cloud-0E3F43?style=for-the-badge&logo=cloudflare&logoColor=white" />
-<img src="https://img.shields.io/badge/Documentation-0E3F43?style=for-the-badge&logo=markdown&logoColor=white" />
-
+<img src="<ICON_URL_PLACEHOLDER>" width="120" />
 </div>
+
+## Precision. Clarity. Systems at Scale.
+Senior focus on risk, architecture, and resilient cloud systems.  
+Solving complexity through structure and secure design.
 
 ---
 
 ## Architecture Concept Map
+```
+Business → Risk → Architecture → Systems Design → Implementation → Ops
+```
 
-```mermaid
-mindmap
-  root((Personal Platform))
-    Infrastructure
-      Compute
-      Network
-      Storage
-    Security
-      Identity
-      Hardening
-      Monitoring
-    Automation
-      Provisioning
-      Backups
-      Templates
-    Exposure
-      Web portals
-      Internal tools
-      APIs
+---
+
+## Security Mindset
+- Reduce exposure through systemic design  
+- Control complexity before scaling anything  
+- Prioritize threat‑driven architecture choices  
+- Automate consistency, validate assumptions  
+- Build defensible, observable infrastructures  
+
+---
+
+## Skill Radar
+| Domain           | Level     |
+|------------------|-----------|
+| Cloud            | ●●●●○ |
+| Security         | ●●●●○ |
+| Infra & Ops      | ●●●●○ |
+| Automation       | ●●●●○ |
+| Observability    | ●●●○○ |
+| Architecture     | ●●●●○ |
+
+---
+
+## Core Stack & Tools
+**Cloud**: <STACK_LIST>  
+**Infra**: Terraform, Linux, Proxmox  
+**Security**: IAM, Zero‑Trust, Hardening  
+**Automation**: Ansible, CI/CD  
+**Observability**: Grafana, Prometheus  
+
+---
+
+## Current Focus
+Exploring scalable secure architectures.  
+Refining automation for reproducible infra.  
+Designing cloud‑native patterns for resilience.  
+Open to high‑impact security and architecture work.
+
+---
+
+## Links
+Portfolio: <PORTFOLIO_URL>  
+LinkedIn: <LINKEDIN_URL>  
+GitHub: https://github.com/<GITHUB_USERNAME>
