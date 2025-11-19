@@ -1,19 +1,5 @@
-<!--
-GitHub profile mini-site for: Jolan Dmt (PercyaDJ)
-Premium, single-page layout using Markdown + SVG assets + stats cards.
-All styling is handled by GitHub + the SVG visuals.
--->
-
 <div align="center">
-
-# Jolan Dmt
-
-### Cybersecurity & Systems Architecture
-
-<br>
-
 <img src="assets/header-glass.svg" alt="Jolan Dmt — Cybersecurity & Systems Architecture" width="100%" />
-
 </div>
 
 ---
@@ -61,8 +47,8 @@ A systemic, risk-driven approach to design and evolve infrastructure:
 
 ## Tech Stack Overview
 
-<div align="center">
 
+<div align="center">
 <table>
   <tr>
     <th>Cloud & Infra</th>
@@ -101,6 +87,7 @@ A systemic, risk-driven approach to design and evolve infrastructure:
   </td>
   </tr>
 </table>
+</div>
 
 ---
 
@@ -126,9 +113,6 @@ A systemic, risk-driven approach to design and evolve infrastructure:
 
 ## Links
 
-- Portfolio (photography): https://jolandmt.com  
-- Cyber consulting: https://jd-secure.fr  
-- LinkedIn: https://linkedin.com/in/jolandmt  
-- GitHub projects: https://github.com/PercyaDJ
-
----
+- Portfolio (photography): https://photo.jolandmt.com  
+- Cyber consulting: https://cyber.jolandmt.com 
+- LinkedIn: https://linkedin.com/in/jolandemottie
