@@ -1,9 +1,6 @@
 <div align="center">
 
-# Jolan  
-Systems · Cybersecurity · Cloud · Automation  
-
-Minimal. Secure. Reliable.
+<img src="./assets/header-glass.svg" alt="Profile header" width="800"/>
 
 </div>
 
@@ -32,7 +29,7 @@ Minimal. Secure. Reliable.
 ```mermaid
 mindmap
   root((Personal Platform))
-    Infra
+    Infrastructure
       Compute
       Network
       Storage
