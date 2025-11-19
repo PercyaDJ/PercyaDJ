@@ -1,0 +1,57 @@
+<svg width="1000" height="180" viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture Concept Map</title>
+  <desc id="desc">Linear flow from context and risk to operations.</desc>
+  <defs>
+    <linearGradient id="nodeGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E3F43"/>
+      <stop offset="100%" stop-color="#1A5C60"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="180" fill="#020617"/>
+
+  <!-- Nodes -->
+  <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="14" text-anchor="middle">
+    <g>
+      <rect x="40" y="55" width="130" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="105" y="90" fill="#E5E7EB">Context</text>
+      <text x="105" y="110" fill="#9CA3AF">Constraints, actors</text>
+    </g>
+    <g>
+      <rect x="210" y="55" width="130" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="275" y="90" fill="#E5E7EB">Risk</text>
+      <text x="275" y="110" fill="#9CA3AF">Threats, impact</text>
+    </g>
+    <g>
+      <rect x="380" y="55" width="140" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="450" y="90" fill="#E5E7EB">Architecture</text>
+      <text x="450" y="110" fill="#9CA3AF">Structures, boundaries</text>
+    </g>
+    <g>
+      <rect x="560" y="55" width="150" height="70" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="635" y="90" fill="#E5E7EB">Principles</text>
+      <text x="635" y="110" fill="#9CA3AF">Rules, trade-offs</text>
+    </g>
+    <g>
+      <rect x="750" y="40" width="180" height="60" rx="12" ry="12" fill="url(#nodeGradient)" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="840" y="70" fill="#E5E7EB">System Design</text>
+    </g>
+    <g>
+      <rect x="750" y="110" width="180" height="60" rx="12" ry="12" fill="#020617" stroke="#4ADE80" stroke-dasharray="4 4" stroke-opacity="0.7"/>
+      <text x="840" y="140" fill="#9CA3AF">Delivery → Operations</text>
+    </g>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#38BDF8" stroke-width="2" stroke-linecap="round">
+    <line x1="170" y1="90" x2="210" y2="90"/>
+    <line x1="340" y1="90" x2="380" y2="90"/>
+    <line x1="520" y1="90" x2="560" y2="90"/>
+    <line x1="710" y1="75" x2="750" y2="70"/>
+  </g>
+
+  <!-- Small connectors to delivery/operations -->
+  <g stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="5 4">
+    <line x1="840" y1="100" x2="840" y2="110"/>
+  </g>
+</svg>
