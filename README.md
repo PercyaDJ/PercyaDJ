@@ -1,85 +1,102 @@
 <!--
-Primary color: #0E3F43
-Secondary color: #1A5C60
-Single-page premium layout with glass-like blocks.
+GitHub profile README for Jolan Dmt
+Premium, single-page, glass-inspired layout using Markdown + SVG.
 -->
 
 <div align="center">
 
-# Jolan Dmt  
-### Cybersecurity & Systems Architecture
+<img src="assets/header-glass.svg" alt="Jolan Dmt — Cybersecurity & Systems Architecture" width="100%" />
 
-<br>
-
-<!-- HERO GLASS BLOCK -->
-<div style="padding: 24px; border-radius: 18px; background: rgba(255,255,255,0.06); backdrop-filter: blur(14px); max-width: 520px; border: 1px solid rgba(255,255,255,0.14);">
-Strategic security and architecture for resilient, controlled systems.  
-Designing clarity, reducing exposure, and shaping long-term foundations.
 </div>
 
-<br>
+---
+
+<div align="center">
+
+### Cybersecurity & Systems Architecture
+
+Strategic security and architecture for resilient, controlled systems.  
+Designing clarity, reducing exposure, and shaping long-term foundations.
+
 </div>
 
 ---
 
 ## Architecture Concept Map
 
-```
-Context → Risk → Architecture → Principles → System Design → Delivery → Operations
-```
+<div align="center">
 
-A systemic method guiding each decision to minimize ambiguity and reinforce security.
+<img src="assets/architecture-map.svg" alt="Architecture Concept Map" width="80%" />
+
+</div>
+
+### Method
+
+I use a systemic, risk-driven approach to design and evolve infrastructure:
+
+- Make risk and constraints explicit before building.  
+- Align architecture with operations from day zero.  
+- Prefer simple, defensible structures over fragile complexity.
 
 ---
 
 ## Security Mindset
 
-- Reduce exposure through structural choices  
-- Control complexity before scaling  
-- Make threat-driven design decisions  
-- Automate consistency and validation  
-- Treat observability as a security function  
-- Prefer minimal, defensible architectures  
+- Reduce exposure through structural design choices.  
+- Control complexity before scaling anything.  
+- Make threat-driven decisions, not tool-driven ones.  
+- Automate consistency and verification of baselines.  
+- Use observability as a primary security signal.  
+- Build minimal, defensible, and maintainable systems.
 
 ---
 
-## Core Expertise
+## Core Domains
 
 **Cybersecurity & Governance**  
-Risk modeling, exposure control, secure boundaries, identity architecture.
+Risk modeling, exposure control, identity architecture, boundary design.
 
 **Architecture & Infrastructure**  
-Cloud foundations, modular systems, high-reliability infrastructure.
+Cloud foundations, modular systems, network segmentation, resilience engineering.
 
 **Automation & Reliability**  
-Deterministic deployments via Ansible, CI/CD-driven lifecycle management.
+Ansible-driven deployments, CI/CD workflows, reproducible infrastructure, lifecycle thinking.
 
 **Systems & Ops**  
-Linux, virtualization, network segmentation, secure service hosting.
+Linux, virtualization, Proxmox-based homelab, secure service hosting.
 
 ---
 
 ## Selected Stack
 
-**Cloud & Infra**: Proxmox, Linux, Terraform, Cloudflare  
-**Security**: IAM, RBAC, Zero-Trust, TLS, Hardening  
-**Automation**: Ansible, CI/CD workflows  
-**Observability**: Grafana, Prometheus  
+**Cloud & Infra**  
+Proxmox · Linux · Terraform · Cloudflare · containerized services
+
+**Security**  
+IAM · RBAC · Zero-Trust patterns · TLS lifecycle · system hardening
+
+**Automation**  
+Ansible · CI/CD pipelines · Git-based workflows
+
+**Observability**  
+Grafana · Prometheus · logs as data
 
 ---
 
 ## Current Focus
 
-Designing secure personal cloud ecosystems.  
-Refining reproducible infrastructure pipelines.  
-Integrating architecture thinking across cloud and systems.  
-Exploring advanced risk-driven models.
+- Designing secure, private-cloud style environments at personal scale.  
+- Refining automation for deterministic, rebuildable infrastructure.  
+- Bringing architecture thinking to every layer: network, systems, and cloud.  
+- Documenting and structuring knowledge for long-term technical growth.
 
 ---
 
 ## Links
 
-Portfolio: https://jolandmt.com  
-Cyber consulting: https://jd-secure.fr  
-LinkedIn: https://linkedin.com/in/jolandmt  
-GitHub: https://github.com/<USERNAME>
+- Portfolio (photography): https://jolandmt.com  
+- Cyber consulting: https://jd-secure.fr  
+- LinkedIn: https://linkedin.com/in/jolandmt  
+- GitHub projects: https://github.com/<USERNAME>
+
+---
