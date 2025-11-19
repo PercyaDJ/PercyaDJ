@@ -1,38 +1,33 @@
-<svg width="1200" height="380" viewBox="0 0 1200 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Jolan Dmt — Cybersecurity &amp; Systems Architecture</title>
   <desc id="desc">Glassmorphism-inspired header card for a GitHub profile.</desc>
   <defs>
     <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0E3F43"/>
-      <stop offset="40%" stop-color="#091F22"/>
+      <stop offset="45%" stop-color="#07191B"/>
       <stop offset="100%" stop-color="#102B30"/>
     </linearGradient>
     <radialGradient id="accentGradient" cx="80%" cy="0%" r="70%">
-      <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.85"/>
       <stop offset="40%" stop-color="#0E3F43" stop-opacity="0.0"/>
       <stop offset="100%" stop-color="#0E3F43" stop-opacity="0.0"/>
     </radialGradient>
-    <filter id="shadow">
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.55"/>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect x="0" y="0" width="1200" height="380" fill="url(#bgGradient)"/>
-  <circle cx="1020" cy="40" r="260" fill="url(#accentGradient)" opacity="0.9"/>
+  <rect x="0" y="0" width="1200" height="360" fill="url(#bgGradient)"/>
+  <circle cx="1040" cy="20" r="260" fill="url(#accentGradient)" opacity="0.9"/>
 
-  <!-- Glass Card -->
+  <!-- Glass Card (approximation: white + low opacity + stroke) -->
   <g filter="url(#shadow)">
-    <rect x="170" y="70" rx="26" ry="26" width="860" height="240" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" />
-  </g>
-
-  <!-- Because GitHub sometimes strips rgba() in SVG, we approximate with solid + opacity -->
-  <g>
-    <rect x="170" y="70" rx="26" ry="26" width="860" height="240" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.22"/>
+    <rect x="170" y="70" rx="26" ry="26" width="860" height="230" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.22"/>
   </g>
 
   <!-- Left vertical accent -->
-  <rect x="190" y="95" width="4" height="190" fill="#4FD1C5" fill-opacity="0.8"/>
+  <rect x="190" y="95" width="4" height="180" fill="#4FD1C5" fill-opacity="0.8"/>
 
   <!-- Text -->
   <g fill="#F9FAFB">
@@ -42,21 +37,21 @@
     <text x="220" y="185" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="20" fill="#E5E7EB">
       Cybersecurity &amp; Systems Architecture
     </text>
-    <text x="220" y="230" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="16" fill="#CBD5F5">
+    <text x="220" y="225" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="15" fill="#CBD5F5">
       Strategic security and architecture for resilient, controlled systems.
     </text>
-    <text x="220" y="258" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="16" fill="#CBD5F5">
-      Designing clarity, reducing exposure, and shaping long-term infrastructure foundations.
+    <text x="220" y="250" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="15" fill="#CBD5F5">
+      Designing clarity, reducing exposure, and shaping long-term foundations.
     </text>
   </g>
 
   <!-- Right-side motif -->
   <g stroke="#6EE7B7" stroke-opacity="0.9" fill="none" stroke-width="1.2">
-    <rect x="820" y="105" width="140" height="70" rx="12" ry="12"/>
-    <rect x="870" y="190" width="150" height="60" rx="18" ry="18" stroke-opacity="0.65"/>
-    <line x1="820" y1="140" x2="760" y2="140"/>
-    <line x1="890" y1="220" x2="830" y2="220"/>
-    <circle cx="760" cy="140" r="4" fill="#6EE7B7"/>
-    <circle cx="830" cy="220" r="4" fill="#6EE7B7"/>
+    <rect x="820" y="100" width="140" height="70" rx="12" ry="12"/>
+    <rect x="870" y="185" width="150" height="60" rx="18" ry="18" stroke-opacity="0.65"/>
+    <line x1="820" y1="135" x2="760" y2="135"/>
+    <line x1="890" y1="215" x2="830" y2="215"/>
+    <circle cx="760" cy="135" r="4" fill="#6EE7B7"/>
+    <circle cx="830" cy="215" r="4" fill="#6EE7B7"/>
   </g>
 </svg>

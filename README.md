@@ -1,11 +1,12 @@
 <!--
-GitHub profile README for Jolan Dmt
-Premium, single-page, glass-inspired layout using Markdown + SVG.
+GitHub profile mini-site for: Jolan Dmt
+Premium, single-page layout using Markdown + SVG assets.
+All styling is handled by GitHub + the SVG visuals.
 -->
 
 <div align="center">
 
-<img src="assets/header-glass.svg" alt="Jolan Dmt — Cybersecurity & Systems Architecture" width="100%" />
+<img src="assets/header-glass.svg" alt="Jolan Dmt — Cybersecurity &amp; Systems Architecture" width="100%" />
 
 </div>
 
@@ -13,7 +14,7 @@ Premium, single-page, glass-inspired layout using Markdown + SVG.
 
 <div align="center">
 
-### Cybersecurity & Systems Architecture
+### Cybersecurity · Systems Architecture · Automation
 
 Strategic security and architecture for resilient, controlled systems.  
 Designing clarity, reducing exposure, and shaping long-term foundations.
@@ -26,12 +27,11 @@ Designing clarity, reducing exposure, and shaping long-term foundations.
 
 <div align="center">
 
-<img src="assets/architecture-map.svg" alt="Architecture Concept Map" width="80%" />
+<img src="assets/architecture-map.svg" alt="Architecture Concept Map" width="90%" />
 
 </div>
 
-### Method
-
+**Method**  
 I use a systemic, risk-driven approach to design and evolve infrastructure:
 
 - Make risk and constraints explicit before building.  
@@ -51,35 +51,32 @@ I use a systemic, risk-driven approach to design and evolve infrastructure:
 
 ---
 
-## Core Domains
+<table>
+  <tr>
+    <td>
 
-**Cybersecurity & Governance**  
-Risk modeling, exposure control, identity architecture, boundary design.
+### Core Domains
 
-**Architecture & Infrastructure**  
-Cloud foundations, modular systems, network segmentation, resilience engineering.
+- Cybersecurity &amp; risk modeling  
+- Systems &amp; infrastructure architecture  
+- Cloud foundations &amp; network boundaries  
+- Automation &amp; reliability engineering  
+- Secure personal cloud ecosystems  
 
-**Automation & Reliability**  
-Ansible-driven deployments, CI/CD workflows, reproducible infrastructure, lifecycle thinking.
+    </td>
+    <td>
 
-**Systems & Ops**  
-Linux, virtualization, Proxmox-based homelab, secure service hosting.
+### Selected Stack
 
----
+- Proxmox · Linux · Terraform · Cloudflare  
+- IAM · RBAC · Zero-Trust patterns · TLS  
+- Ansible · CI/CD · Git-based workflows  
+- Grafana · Prometheus · logs as data  
+- Homelab-driven experimentation &amp; prototyping  
 
-## Selected Stack
-
-**Cloud & Infra**  
-Proxmox · Linux · Terraform · Cloudflare · containerized services
-
-**Security**  
-IAM · RBAC · Zero-Trust patterns · TLS lifecycle · system hardening
-
-**Automation**  
-Ansible · CI/CD pipelines · Git-based workflows
-
-**Observability**  
-Grafana · Prometheus · logs as data
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -87,7 +84,7 @@ Grafana · Prometheus · logs as data
 
 - Designing secure, private-cloud style environments at personal scale.  
 - Refining automation for deterministic, rebuildable infrastructure.  
-- Bringing architecture thinking to every layer: network, systems, and cloud.  
+- Bringing architecture thinking to every layer: network, systems, cloud.  
 - Documenting and structuring knowledge for long-term technical growth.
 
 ---
@@ -97,6 +94,6 @@ Grafana · Prometheus · logs as data
 - Portfolio (photography): https://jolandmt.com  
 - Cyber consulting: https://jd-secure.fr  
 - LinkedIn: https://linkedin.com/in/jolandmt  
-- GitHub projects: https://github.com/<USERNAME>
+- GitHub projects: https://github.com/&lt;USERNAME&gt;
 
 ---
