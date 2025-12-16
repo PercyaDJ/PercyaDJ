@@ -2,15 +2,11 @@
 <img src="assets/header-glass.svg" width="100%"/>
 </div>
 
----
-
 ## Architecture Approach
 
 <div align="center">
   <img src="assets/architecture-map.svg" width="90%"/>
 </div>
-
----
 
 ## Strengths
 
@@ -23,16 +19,12 @@
 - Minimal exposure, controlled access, clean boundaries  
 - Rebuild-ready documentation and structured system design  
 
----
-
 ## Technology Snapshot
 
 **Infra & Systems**: Proxmox VE • Debian • LXC/VM  
 **Network & Access**: WireGuard • Cloudflare DNS/Tunnel  
 **Services**: Nextcloud • AdGuard • Proxmox Backup Server  
 **Practices**: Isolation • Surface reduction • Rebuild mindset  
-
----
 
 ## Current Work
 
@@ -41,10 +33,8 @@
 - Light monitoring and observability patterns  
 - Turning homelab patterns into reusable designs  
 
----
-
 ## Links
 
-- https://jolandmt.com  
 - https://cyber.jolandmt.com  
-- https://linkedin.com/in/jolandemottie  
+- https://linkedin.com/in/jolandemottie
+- https://photo.jolandmt.com  
