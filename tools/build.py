@@ -402,7 +402,8 @@ def readme(lang):
     out.append("")
     out.append(f'<img width="100%" src="{LIVE_URL}/nowline-{lang}-dark.svg" alt="{esc(L(NOW_PREFIX).strip())}">')
     out.append("")
-    slices = "".join(f'<a href="#{h["key"]}"><img width="20%" src="{LIVE_URL}/slice-{k}-{lang}.svg" '
+    # GitHub prefixes every id with "user-content-" and only scrolls when the link uses that full id
+    slices = "".join(f'<a href="#user-content-{h["key"]}"><img width="20%" src="{LIVE_URL}/slice-{k}-{lang}.svg" '
                      f'alt="{esc(h["label"] + " · " + L(h["proj"]))}"></a>' for k, h in enumerate(HOURS))
     out.append(f"<p>{slices}</p>")
     out.append("")
@@ -424,7 +425,9 @@ def readme(lang):
         out.append(f'<img width="100%" src="assets/sections/head-{h["key"]}-{lang}-dark.svg" alt="{esc(h["label"] + " · " + L(h["what"]))}">')
         out.append("")
         art = f'art-{h["key"]}-{lang}.svg' if h["key"] == "aurion" else f'art-{h["key"]}-{lang}-dark.svg'
-        out.append(f'<img align="{side}" width="54%" src="assets/sections/{art}" alt="{esc(L(ARTS_ALT[h["key"]]))}">')
+        img = f'<img align="{side}" width="54%" src="assets/sections/{art}" alt="{esc(L(ARTS_ALT[h["key"]]))}">'
+        # a bare <img> gets wrapped in a link to the file; <picture> avoids it
+        out.append(img if art.endswith("-dark.svg") else f"<picture>{img}</picture>")
         out.append(f'<img width="40%" src="assets/sections/card-{h["key"]}-{lang}-dark.svg" '
                    f'alt="{esc(L(d["title"]) + ". " + L(d["tag"]) + ". " + L(d["text"]))}">')
         out.append("")
@@ -441,7 +444,7 @@ def readme(lang):
     out.append('<a id="reserve"></a>')
     out.append(f'<img width="100%" src="assets/sections/head-reserve-{lang}-dark.svg" alt="{esc(L(HEADINGS["reserve"]))}">')
     out.append("")
-    out.append(f'<img width="100%" src="assets/sections/art-reserve-{lang}.svg" alt="{esc(L(RESERVE["alt"]) + ", ".join(L(t) for t in RESERVE["tags"]))}">')
+    out.append(f'<picture><img width="100%" src="assets/sections/art-reserve-{lang}.svg" alt="{esc(L(RESERVE["alt"]) + ", ".join(L(t) for t in RESERVE["tags"]))}"></picture>')
     out.append("")
     out.append(f'<img width="100%" src="assets/sections/text-reserve-{lang}-dark.svg" alt="{esc(L(RESERVE["text"]))}">')
     out.append("")

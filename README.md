@@ -7,7 +7,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/nowline-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/nowline-en-light.svg"><img width="100%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/nowline-en-dark.svg" alt="Right now in France:"></picture>
 
-<p><a href="#lowsper"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-0-en.svg" alt="08:00 · Lowsper"></a><a href="#lysbor"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-1-en.svg" alt="10:00 · Lysbor"></a><a href="#patchboard"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-2-en.svg" alt="14:00 · PatchBoard"></a><a href="#labo"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-3-en.svg" alt="18:00 · Photo lab"></a><a href="#aurion"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-4-en.svg" alt="22:00 · Aurion"></a></p>
+<p><a href="#user-content-lowsper"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-0-en.svg" alt="08:00 · Lowsper"></a><a href="#user-content-lysbor"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-1-en.svg" alt="10:00 · Lysbor"></a><a href="#user-content-patchboard"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-2-en.svg" alt="14:00 · PatchBoard"></a><a href="#user-content-labo"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-3-en.svg" alt="18:00 · Photo lab"></a><a href="#user-content-aurion"><img width="20%" src="https://raw.githubusercontent.com/PercyaDJ/PercyaDJ/live/slice-4-en.svg" alt="22:00 · Aurion"></a></p>
 
 <details name="reads">
 <summary><picture><source media="(prefers-color-scheme: dark)" srcset="assets/header/signs-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/header/signs-en-light.svg"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/header/signs-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/header/signs-en-light.svg"><img width="96%" src="assets/header/signs-en-dark.svg" alt="30 seconds, The tech side, The human side. ↑ click the signs to read ↑"></picture></picture></summary>
@@ -83,7 +83,7 @@ In-house editing engine · interface built on ArtCraft (LightCraft, PhotoCraft�
 <a id="aurion"></a>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-aurion-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-aurion-en-light.svg"><img width="100%" src="assets/sections/head-aurion-en-dark.svg" alt="22:00 · Northern skies"></picture>
 
-<img align="left" width="54%" src="assets/sections/art-aurion-en.svg" alt="Aurion: a Raspberry Pi camera on a tripod photographs the northern lights and ranks the shots">
+<picture><img align="left" width="54%" src="assets/sections/art-aurion-en.svg" alt="Aurion: a Raspberry Pi camera on a tripod photographs the northern lights and ranks the shots"></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-aurion-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-aurion-en-light.svg"><img width="40%" src="assets/sections/card-aurion-en-dark.svg" alt="Aurion. Open source · Raspberry Pi. A small computer and a camera you leave outside at night. It watches the sky on its own, photographs the northern lights and ranks them for the morning. You set it up from your phone, even without internet."></picture>
 
 <a href="https://github.com/PercyaDJ/Aurion">View the project →</a>
@@ -98,7 +98,7 @@ Rust · Raspberry Pi 4 or 5 · HQ camera (IMX477 sensor) · built-in Wi-Fi acces
 <a id="reserve"></a>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-reserve-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-reserve-en-light.svg"><img width="100%" src="assets/sections/head-reserve-en-dark.svg" alt="After midnight · The vault"></picture>
 
-<img width="100%" src="assets/sections/art-reserve-en.svg" alt="The vault, a locked fisherman&#x27;s cabin at night. Tools shown on request: GDPR and DPIA analysis, Business impact analysis, Security assurance plans, SBOM scripts, Proxmox hardening">
+<picture><img width="100%" src="assets/sections/art-reserve-en.svg" alt="The vault, a locked fisherman&#x27;s cabin at night. Tools shown on request: GDPR and DPIA analysis, Business impact analysis, Security assurance plans, SBOM scripts, Proxmox hardening"></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/text-reserve-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/text-reserve-en-light.svg"><img width="100%" src="assets/sections/text-reserve-en-dark.svg" alt="Tools built for real engagements. The code stays closed, but I&#x27;m happy to demo them on request."></picture>
 
