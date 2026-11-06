@@ -116,7 +116,7 @@ def T(x, y, text, size=12, fill="#000", weight=400, family=MONO, extra=""):
             f'fill="{fill}"{extra}>{esc(text)}</text>')
 
 
-def svg(view_w, view_h, label, body, css=""):
+def svg(view_w, view_h, label, body, css="", vy=0):
     """Wrap a body in an <svg>, embedding subsets of the fonts it uses."""
     faces = []
     for family in (SORA, MONO):
@@ -126,7 +126,7 @@ def svg(view_w, view_h, label, body, css=""):
             faces.append(font_face(family, chars))
     style = "".join(faces) + css
     return (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
-            f'viewBox="0 0 {view_w} {view_h}" role="img" aria-label="{esc(label)}">'
+            f'viewBox="0 {vy} {view_w} {view_h}" role="img" aria-label="{esc(label)}">'
             f'<title>{esc(label)}</title><style>{style}</style>{body}</svg>')
 
 
@@ -250,23 +250,30 @@ def signs(lang, theme):
 
 
 # ---------------------------------------------------------------- sections
-def heading(colors, text, theme):
+def card(colors, label, title, tag, text, theme):
+    """Section text: time pill and label, title, tag, then the description wrapped to fit beside the scene."""
     c = GH[theme]
     stops = "".join(f'<stop offset="{k / (len(colors) - 1)}" stop-color="{col}"/>' for k, col in enumerate(colors))
+    lines = wrap(text, 54)
+    h = 104 + (len(lines) - 1) * 23 + 12
     body = (f'<defs><linearGradient id="g" x1="0" x2="1">{stops}</linearGradient></defs>'
-            f'<rect x="0" y="7" width="54" height="24" rx="12" fill="url(#g)"/>' + T(68, 27, text, 21, c["fg"], 600, SORA))
-    return svg(900, 40, text, body)
+            f'<rect x="0" y="6" width="40" height="18" rx="9" fill="url(#g)"/>' +
+            T(50, 21, label, 14, c["muted"], 600, MONO) +
+            T(0, 56, title, 22, c["fg"], 700, SORA) + T(0, 78, tag, 12.5, c["muted"], 400, MONO))
+    body += "".join(T(0, 104 + k * 23, l, 14.5, c["fg"], 300, SORA) for k, l in enumerate(lines))
+    return svg(440, h, f"{label}. {title}. {tag}. {text}", body)
 
 
-def card(key, lang, theme):
-    c = GH[theme]
+def project_card(key, lang, theme):
+    h = next(x for x in HOURS if x["key"] == key)
     d = PROJECTS[key]
-    title, tag, para = tr(d["title"], lang), tr(d["tag"], lang), tr(d["text"], lang)
-    lines = wrap(para, 40)
-    h = 78 + len(lines) * 25
-    body = T(0, 26, title, 22, c["fg"], 700, SORA) + T(0, 50, tag, 12.5, c["muted"], 400, MONO)
-    body += "".join(T(0, 84 + k * 25, l, 15, c["fg"], 300, SORA) for k, l in enumerate(lines))
-    return svg(380, h, f"{title}. {tag}. {para}", body)
+    return card(h["colors"], f'{h["label"]} · {tr(h["what"], lang)}', tr(d["title"], lang), tr(d["tag"], lang),
+                tr(d["text"], lang), theme)
+
+
+def reserve_card(lang, theme):
+    return card(["#03060f", "#0b1430", "#1b2b55"], tr(RESERVE["label"], lang), tr(RESERVE["title"], lang),
+                tr(RESERVE["tag"], lang), tr(RESERVE["text"], lang), theme)
 
 
 def paragraph(text, theme):
@@ -280,6 +287,8 @@ def frame(inner, label, theme, h=380):
     p = P[theme]
     body = (f'<defs><clipPath id="c"><rect width="900" height="{h}" rx="16"/></clipPath></defs>'
             f'<g clip-path="url(#c)"><rect width="900" height="{h}" fill="{p["mat"]}"/>{inner}</g>')
+    if h == 380:
+        return svg(900, 330, label, body, ANIM_CSS, vy=24)
     return svg(900, h, label, body, ANIM_CSS)
 
 
@@ -417,43 +426,32 @@ def readme(lang):
         out.append("")
     out.append("</details>")
     out.append("")
-    # hours
-    for k, h in enumerate(HOURS):
-        d = PROJECTS[h["key"]]
+    # one block per time slot, then the vault: scene on one side, text on the other (zigzag)
+    blocks = [dict(key=h["key"], art=(f'art-{h["key"]}-{lang}.svg' if h["key"] == "aurion" else f'art-{h["key"]}-{lang}-dark.svg'),
+                   art_alt=L(ARTS_ALT[h["key"]]), card=f'card-{h["key"]}-{lang}-dark.svg',
+                   card_alt=f'{h["label"]} · {L(h["what"])}. {L(PROJECTS[h["key"]]["title"])}. {L(PROJECTS[h["key"]]["tag"])}. {L(PROJECTS[h["key"]]["text"])}',
+                   href=PROJECTS[h["key"]]["href"], link=L(PROJECTS[h["key"]]["link"]), tech=L(PROJECTS[h["key"]]["tech"]))
+              for h in HOURS]
+    blocks.append(dict(key="reserve", art=f"art-reserve-{lang}.svg",
+                       art_alt=L(RESERVE["alt"]) + ", ".join(L(t) for t in RESERVE["tags"]),
+                       card=f"card-reserve-{lang}-dark.svg",
+                       card_alt=f'{L(RESERVE["label"])}. {L(RESERVE["title"])}. {L(RESERVE["tag"])}. {L(RESERVE["text"])}',
+                       href=f"mailto:{CONTACT}?subject=Demo", link=L(RESERVE["link"]), tech=L(RESERVE["tech"])))
+    for k, bl in enumerate(blocks):
         side = "left" if k % 2 == 0 else "right"
-        out.append(f'<a id="{h["key"]}"></a>')
-        out.append(f'<img width="100%" src="assets/sections/head-{h["key"]}-{lang}-dark.svg" alt="{esc(h["label"] + " · " + L(h["what"]))}">')
-        out.append("")
-        art = f'art-{h["key"]}-{lang}.svg' if h["key"] == "aurion" else f'art-{h["key"]}-{lang}-dark.svg'
-        img = f'<img align="{side}" width="54%" src="assets/sections/{art}" alt="{esc(L(ARTS_ALT[h["key"]]))}">'
+        out.append(f'<a id="{bl["key"]}"></a>')
+        img = f'<img align="{side}" width="50%" src="assets/sections/{bl["art"]}" alt="{esc(bl["art_alt"])}">'
         # a bare <img> gets wrapped in a link to the file; <picture> avoids it
-        out.append(img if art.endswith("-dark.svg") else f"<picture>{img}</picture>")
-        out.append(f'<img width="40%" src="assets/sections/card-{h["key"]}-{lang}-dark.svg" '
-                   f'alt="{esc(L(d["title"]) + ". " + L(d["tag"]) + ". " + L(d["text"]))}">')
+        out.append(img if bl["art"].endswith("-dark.svg") else f"<picture>{img}</picture>")
+        out.append(f'<img width="46%" src="assets/sections/{bl["card"]}" alt="{esc(bl["card_alt"])}">')
         out.append("")
-        out.append(f'<a href="{d["href"]}">{L(d["link"])} →</a>')
+        out.append(f'<details><summary><b>{L(HEADINGS["tech"])}</b> · <a href="{bl["href"]}">{bl["link"]} →</a></summary>')
         out.append("")
-        out.append(f"<details><summary><b>{L(HEADINGS['tech'])}</b></summary>")
-        out.append("")
-        out.append(L(d["tech"]))
+        out.append(bl["tech"])
         out.append("")
         out.append("</details>")
         out.append('<br clear="all">')
         out.append("")
-    # reserve
-    out.append('<a id="reserve"></a>')
-    out.append(f'<img width="100%" src="assets/sections/head-reserve-{lang}-dark.svg" alt="{esc(L(HEADINGS["reserve"]))}">')
-    out.append("")
-    out.append(f'<picture><img width="100%" src="assets/sections/art-reserve-{lang}.svg" alt="{esc(L(RESERVE["alt"]) + ", ".join(L(t) for t in RESERVE["tags"]))}"></picture>')
-    out.append("")
-    out.append(f'<img width="100%" src="assets/sections/text-reserve-{lang}-dark.svg" alt="{esc(L(RESERVE["text"]))}">')
-    out.append("")
-    out.append(f"<details><summary><b>{L(HEADINGS['tech'])}</b></summary>")
-    out.append("")
-    out.append(L(RESERVE["tech"]))
-    out.append("")
-    out.append("</details>")
-    out.append("")
     out.append(f'<img width="100%" src="assets/sections/text-talk-{lang}-dark.svg" alt="{esc(L(TALK))}">')
     out.append("")
     text = "\n".join(out)
@@ -490,14 +488,10 @@ def main():
             for slot in SLOTS:
                 write(f"assets/live-src/nowline-{slot}-{lang}-{theme}.svg", nowline(slot, lang, theme))
             for h in HOURS:
-                write(f"assets/sections/head-{h['key']}-{lang}-{theme}.svg",
-                      heading(h["colors"], f"{h['label']} · {tr(h['what'], lang)}", theme))
-                write(f"assets/sections/card-{h['key']}-{lang}-{theme}.svg", card(h["key"], lang, theme))
+                write(f"assets/sections/card-{h['key']}-{lang}-{theme}.svg", project_card(h["key"], lang, theme))
                 if h["key"] != "aurion":  # a night photo: the same in both themes
                     write(f"assets/sections/art-{h['key']}-{lang}-{theme}.svg", ARTS[h["key"]](lang, theme))
-            write(f"assets/sections/head-reserve-{lang}-{theme}.svg",
-                  heading(["#03060f", "#0b1430", "#1b2b55"], tr(HEADINGS["reserve"], lang), theme))
-            write(f"assets/sections/text-reserve-{lang}-{theme}.svg", paragraph(tr(RESERVE["text"], lang), theme))
+            write(f"assets/sections/card-reserve-{lang}-{theme}.svg", reserve_card(lang, theme))
             write(f"assets/sections/text-talk-{lang}-{theme}.svg", paragraph(tr(TALK, lang), theme))
     write("assets/header/linkedin.svg", btn_linkedin())
     write("README.md", readme("en"))

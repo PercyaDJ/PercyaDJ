@@ -21,14 +21,10 @@
 </details>
 
 <a id="lowsper"></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-lowsper-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-lowsper-fr-light.svg"><img width="100%" src="assets/sections/head-lowsper-fr-dark.svg" alt="08:00 · La réunion"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-lowsper-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-lowsper-fr-light.svg"><img align="left" width="50%" src="assets/sections/art-lowsper-fr-dark.svg" alt="Lowsper : deux personnes parlent et le texte s&#x27;écrit tout seul, hors ligne"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-lowsper-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-lowsper-fr-light.svg"><img width="46%" src="assets/sections/card-lowsper-fr-dark.svg" alt="08:00 · La réunion. Lowsper. Code ouvert · dans le navigateur. Pendant une réunion, Lowsper écrit tout ce qui se dit et sépare qui parle. J&#x27;en ressors avec de quoi faire le compte rendu en deux minutes. Rien ne part sur internet : tout reste sur l&#x27;ordinateur."></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-lowsper-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-lowsper-fr-light.svg"><img align="left" width="54%" src="assets/sections/art-lowsper-fr-dark.svg" alt="Lowsper : deux personnes parlent et le texte s&#x27;écrit tout seul, hors ligne"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-lowsper-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-lowsper-fr-light.svg"><img width="40%" src="assets/sections/card-lowsper-fr-dark.svg" alt="Lowsper. Code ouvert · dans le navigateur. Pendant une réunion, Lowsper écrit tout ce qui se dit et sépare qui parle. J&#x27;en ressors avec de quoi faire le compte rendu en deux minutes. Rien ne part sur internet : tout reste sur l&#x27;ordinateur."></picture>
-
-<a href="https://github.com/PercyaDJ/Lowsper">Voir le projet →</a>
-
-<details><summary><b>Détails techniques</b></summary>
+<details><summary><b>Détails techniques</b> · <a href="https://github.com/PercyaDJ/Lowsper">Voir le projet →</a></summary>
 
 Whisper dans le navigateur · un seul fichier HTML, sans installation ni droits administrateur · séparation des intervenants · glossaire métier · import de fichiers audio · export Markdown vers Obsidian · JavaScript · licence MIT.
 
@@ -36,14 +32,10 @@ Whisper dans le navigateur · un seul fichier HTML, sans installation ni droits 
 <br clear="all">
 
 <a id="lysbor"></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-lysbor-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-lysbor-fr-light.svg"><img width="100%" src="assets/sections/head-lysbor-fr-dark.svg" alt="10:00 · Le code part"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-lysbor-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-lysbor-fr-light.svg"><img align="right" width="50%" src="assets/sections/art-lysbor-fr-dark.svg" alt="Lysbor : le code est relu et trois problèmes sortent en plan d&#x27;action avec responsables et délais"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-lysbor-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-lysbor-fr-light.svg"><img width="46%" src="assets/sections/card-lysbor-fr-dark.svg" alt="10:00 · Le code part. Lysbor. Logiciel en ligne · démo ouverte. Quand une équipe écrit un logiciel, des failles s&#x27;y glissent. Lysbor relit chaque nouvelle version, trouve les failles et dit qui doit corriger quoi, avant quand. Il prévient aussi quand la loi européenne impose de déclarer un problème."></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-lysbor-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-lysbor-fr-light.svg"><img align="right" width="54%" src="assets/sections/art-lysbor-fr-dark.svg" alt="Lysbor : le code est relu et trois problèmes sortent en plan d&#x27;action avec responsables et délais"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-lysbor-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-lysbor-fr-light.svg"><img width="40%" src="assets/sections/card-lysbor-fr-dark.svg" alt="Lysbor. Logiciel en ligne · démo ouverte. Quand une équipe écrit un logiciel, des failles s&#x27;y glissent. Lysbor relit chaque nouvelle version, trouve les failles et dit qui doit corriger quoi, avant quand. Il prévient aussi quand la loi européenne impose de déclarer un problème."></picture>
-
-<a href="https://lysbor.com/">Essayer la démo →</a>
-
-<details><summary><b>Détails techniques</b></summary>
+<details><summary><b>Détails techniques</b> · <a href="https://lysbor.com/">Essayer la démo →</a></summary>
 
 Agent CI/CD · analyse statique du code (SAST, Semgrep) · analyse des dépendances et des images (SCA, Trivy) · génération de SBOM (Syft) · détection de secrets · plans d'action avec responsables · alertes de déclaration CRA · SaaS, code fermé.
 
@@ -51,14 +43,10 @@ Agent CI/CD · analyse statique du code (SAST, Semgrep) · analyse des dépendan
 <br clear="all">
 
 <a id="patchboard"></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-patchboard-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-patchboard-fr-light.svg"><img width="100%" src="assets/sections/head-patchboard-fr-dark.svg" alt="14:00 · Les rapports"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-patchboard-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-patchboard-fr-light.svg"><img align="left" width="50%" src="assets/sections/art-patchboard-fr-dark.svg" alt="PatchBoard : des fichiers en vrac deviennent un tableau, puis un mail part"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-patchboard-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-patchboard-fr-light.svg"><img width="46%" src="assets/sections/card-patchboard-fr-dark.svg" alt="14:00 · Les rapports. PatchBoard. Code ouvert · un seul fichier. Chaque semaine, les équipes sécurité reçoivent des dizaines de fichiers pour savoir quels ordinateurs ne sont pas à jour. PatchBoard les avale d&#x27;un coup, montre les postes à corriger et prépare les mails pour prévenir les bonnes personnes."></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-patchboard-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-patchboard-fr-light.svg"><img align="left" width="54%" src="assets/sections/art-patchboard-fr-dark.svg" alt="PatchBoard : des fichiers en vrac deviennent un tableau, puis un mail part"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-patchboard-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-patchboard-fr-light.svg"><img width="40%" src="assets/sections/card-patchboard-fr-dark.svg" alt="PatchBoard. Code ouvert · un seul fichier. Chaque semaine, les équipes sécurité reçoivent des dizaines de fichiers pour savoir quels ordinateurs ne sont pas à jour. PatchBoard les avale d&#x27;un coup, montre les postes à corriger et prépare les mails pour prévenir les bonnes personnes."></picture>
-
-<a href="https://github.com/PercyaDJ/PatchBoard">Voir le projet →</a>
-
-<details><summary><b>Détails techniques</b></summary>
+<details><summary><b>Détails techniques</b> · <a href="https://github.com/PercyaDJ/PatchBoard">Voir le projet →</a></summary>
 
 Un seul fichier HTML, zéro dépendance, fonctionne hors ligne · consolidation des exports CSV EPO (antivirus) et WSUS (mises à jour Windows) · détection automatique du type de fichier et du site · brouillons de mail en un clic · licence MIT.
 
@@ -66,14 +54,10 @@ Un seul fichier HTML, zéro dépendance, fonctionne hors ligne · consolidation 
 <br clear="all">
 
 <a id="labo"></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-labo-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-labo-fr-light.svg"><img width="100%" src="assets/sections/head-labo-fr-dark.svg" alt="18:00 · L&#x27;atelier photo"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-labo-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-labo-fr-light.svg"><img align="right" width="50%" src="assets/sections/art-labo-fr-dark.svg" alt="Labo photo : la photo est triée par une IA puis retouchée, avant et après"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-labo-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-labo-fr-light.svg"><img width="46%" src="assets/sections/card-labo-fr-dark.svg" alt="18:00 · L&#x27;atelier photo. Labo photo. Projet privé · démo sur demande. J&#x27;ai reconstruit mon propre atelier photo pour ne plus dépendre d&#x27;Adobe. Il trie les photos, les retouche et monte les vidéos. Une IA peut le piloter via un serveur MCP pour faire le travail répétitif à ma place. Tout tourne en local."></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/art-labo-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/art-labo-fr-light.svg"><img align="right" width="54%" src="assets/sections/art-labo-fr-dark.svg" alt="Labo photo : la photo est triée par une IA puis retouchée, avant et après"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-labo-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-labo-fr-light.svg"><img width="40%" src="assets/sections/card-labo-fr-dark.svg" alt="Labo photo. Projet privé · démo sur demande. J&#x27;ai reconstruit mon propre atelier photo pour ne plus dépendre d&#x27;Adobe. Il trie les photos, les retouche et monte les vidéos. Une IA peut le piloter via un serveur MCP pour faire le travail répétitif à ma place. Tout tourne en local."></picture>
-
-<a href="mailto:jolan@norkenix.com?subject=Demo%20photo%20lab">Demander une démo →</a>
-
-<details><summary><b>Détails techniques</b></summary>
+<details><summary><b>Détails techniques</b> · <a href="mailto:jolan@norkenix.com?subject=Demo%20photo%20lab">Demander une démo →</a></summary>
 
 Moteur de retouche maison · interface basée sur ArtCraft (LightCraft, PhotoCraft…) · lecture et montage vidéo via FFmpeg · serveur MCP pour brancher une IA locale ou externe · tri et étiquetage automatiques · micro-modèles open source (de 4 à 279 Mo) : détection de personnes · détection de câbles et fils électriques · reconstruction de zones d'image · 100 % local.
 
@@ -81,14 +65,10 @@ Moteur de retouche maison · interface basée sur ArtCraft (LightCraft, PhotoCra
 <br clear="all">
 
 <a id="aurion"></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-aurion-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-aurion-fr-light.svg"><img width="100%" src="assets/sections/head-aurion-fr-dark.svg" alt="22:00 · Le ciel du Nord"></picture>
+<picture><img align="left" width="50%" src="assets/sections/art-aurion-fr.svg" alt="Aurion : une caméra Raspberry Pi sur trépied photographie les aurores et classe les photos"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-aurion-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-aurion-fr-light.svg"><img width="46%" src="assets/sections/card-aurion-fr-dark.svg" alt="22:00 · Le ciel du Nord. Aurion. Code ouvert · Raspberry Pi. Un petit ordinateur et une caméra qu&#x27;on pose dehors la nuit. Il surveille le ciel tout seul, photographie les aurores boréales et me les classe pour le matin. On le règle depuis son téléphone, même sans internet."></picture>
 
-<picture><img align="left" width="54%" src="assets/sections/art-aurion-fr.svg" alt="Aurion : une caméra Raspberry Pi sur trépied photographie les aurores et classe les photos"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-aurion-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-aurion-fr-light.svg"><img width="40%" src="assets/sections/card-aurion-fr-dark.svg" alt="Aurion. Code ouvert · Raspberry Pi. Un petit ordinateur et une caméra qu&#x27;on pose dehors la nuit. Il surveille le ciel tout seul, photographie les aurores boréales et me les classe pour le matin. On le règle depuis son téléphone, même sans internet."></picture>
-
-<a href="https://github.com/PercyaDJ/Aurion">Voir le projet →</a>
-
-<details><summary><b>Détails techniques</b></summary>
+<details><summary><b>Détails techniques</b> · <a href="https://github.com/PercyaDJ/Aurion">Voir le projet →</a></summary>
 
 Rust · Raspberry Pi 4 ou 5 · caméra HQ (capteur IMX477) · point d'accès Wi-Fi intégré · exposition automatique · mode expédition sur plusieurs nuits · photos RAW · mise à jour depuis le téléphone avec retour arrière.
 
@@ -96,17 +76,15 @@ Rust · Raspberry Pi 4 ou 5 · caméra HQ (capteur IMX477) · point d'accès Wi-
 <br clear="all">
 
 <a id="reserve"></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/head-reserve-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/head-reserve-fr-light.svg"><img width="100%" src="assets/sections/head-reserve-fr-dark.svg" alt="Après minuit · La réserve"></picture>
+<picture><img align="right" width="50%" src="assets/sections/art-reserve-fr.svg" alt="La réserve, un rorbu fermé à clé la nuit. Outils montrés sur demande : Analyse RGPD et AIPD, Analyse d&#x27;impact (BIA), Plans d&#x27;assurance sécurité, Scripts SBOM, Durcissement Proxmox"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/card-reserve-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/card-reserve-fr-light.svg"><img width="46%" src="assets/sections/card-reserve-fr-dark.svg" alt="Après minuit. La réserve. Code fermé · démo sur demande. Des outils construits pour de vraies missions. Le code reste fermé, mais je les montre volontiers sur demande."></picture>
 
-<picture><img width="100%" src="assets/sections/art-reserve-fr.svg" alt="La réserve, un rorbu fermé à clé la nuit. Outils montrés sur demande : Analyse RGPD et AIPD, Analyse d&#x27;impact (BIA), Plans d&#x27;assurance sécurité, Scripts SBOM, Durcissement Proxmox"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/text-reserve-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/text-reserve-fr-light.svg"><img width="100%" src="assets/sections/text-reserve-fr-dark.svg" alt="Des outils construits pour de vraies missions. Le code reste fermé, mais je les montre volontiers sur demande."></picture>
-
-<details><summary><b>Détails techniques</b></summary>
+<details><summary><b>Détails techniques</b> · <a href="mailto:jolan@norkenix.com?subject=Demo">Demander une démo →</a></summary>
 
 Analyse RGPD et AIPD (critères G29 WP248) · analyse d'impact sur l'activité (BIA) · générateur de plans d'assurance sécurité · scripts SBOM · durcissement de Proxmox VE · fonctionnement local, sans envoi de données.
 
 </details>
+<br clear="all">
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/text-talk-fr-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/text-talk-fr-light.svg"><img width="100%" src="assets/sections/text-talk-fr-dark.svg" alt="Envie d&#x27;en parler ? IA locale dans la conformité, automatisation des livrables NIS2 et CRA, gestion des vulnérabilités, architecture de sécurité. Les contacts sont tout en haut."></picture>
 

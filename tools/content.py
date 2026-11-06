@@ -158,6 +158,10 @@ PROJECTS = {
 }
 
 RESERVE = {
+    "label": ("After midnight", "Après minuit"),
+    "title": ("The vault", "La réserve"),
+    "tag": ("Closed source · demo on request", "Code fermé · démo sur demande"),
+    "link": ("Request a demo", "Demander une démo"),
     "badge": ("ON REQUEST", "SUR DEMANDE"),
     "alt": ("The vault, a locked fisherman's cabin at night. Tools shown on request: ",
             "La réserve, un rorbu fermé à clé la nuit. Outils montrés sur demande : "),
