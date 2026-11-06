@@ -1,0 +1,32 @@
+name: Now frame
+
+# Moves the "now" frame of the profile panorama at 8:00, 10:00, 14:00, 18:00, 22:00 and midnight (French time).
+# Cron runs in UTC: each slot is listed for winter (UTC+1) and summer (UTC+2) time.
+# A run that finds the slot already published exits without pushing anything.
+on:
+  schedule:
+    - cron: "1 6,7,8,9,12,13,16,17,20,21,22,23 * * *"
+  push:
+    branches: [main, claude/peaceful-galileo-elg5ep]  # TEMP: lets the PR preview create the live branch
+    paths: ["assets/live-src/**", "tools/update_live.sh", ".github/workflows/now-frame.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: now-frame
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the current frame to the live branch
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            bash tools/update_live.sh
+          else
+            bash tools/update_live.sh --force
+          fi
