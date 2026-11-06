@@ -24,7 +24,7 @@ from fontTools.ttLib import TTFont
 
 sys.path.insert(0, os.path.dirname(__file__))
 from content import (BUTTON_MAIL, CONTACT, HEADINGS, HOURS, LINKEDIN, NOW_PREFIX, NOWTXT, OWNER,  # noqa: E402
-                     PROJECTS, RESERVE, SIGNS, SIGNS_HINT, TALK, TEXTS, TITLE)
+                     PROJECTS, RESERVE, SIGNS, SIGNS_HINT, TEXTS, TITLE)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "tools", "src")
@@ -208,19 +208,19 @@ def slice_svg(i, lang, now):
     h = HOURS[i]
     proj = tr(h["proj"], lang)
     body = (f'<image href="{jpeg(f"slice-{i}.jpg")}" width="360" height="720"/>'
-            '<rect y="590" width="360" height="130" fill="#000" opacity=".42"/>' +
-            T(28, 646, h["label"], 36, "#ffffff", 600, MONO) + T(28, 690, proj, 30, "#e9f1f5", 400, SORA))
+            '<rect y="510" width="360" height="130" fill="#000" opacity=".42"/>' +
+            T(28, 566, h["label"], 36, "#ffffff", 600, MONO) + T(28, 610, proj, 30, "#e9f1f5", 400, SORA))
     if i < 4:
-        body += '<rect x="357" y="0" width="3" height="720" fill="#fff" opacity=".55"/>'
+        body += '<rect x="357" y="0" width="3" height="640" fill="#fff" opacity=".55"/>'
     if now:
         word = "NOW" if lang == "en" else "MAINTENANT"
         pill_w = 150 if lang == "en" else 288
-        body += (f'<rect x="7" y="7" width="346" height="706" fill="none" stroke="#fff" stroke-width="10" rx="6"/>'
+        body += (f'<rect x="7" y="7" width="346" height="626" fill="none" stroke="#fff" stroke-width="10" rx="6"/>'
                  f'<rect x="36" y="34" width="{pill_w}" height="66" rx="33" fill="#fff"/>'
                  f'<circle class="pu" cx="76" cy="67" r="12" fill="#e5484d"/>' +
                  T(100, 79, word, 32, "#10262a", 600, MONO))
     label = f'{h["label"]} · {proj}' + (" · " + ("now" if lang == "en" else "maintenant") if now else "")
-    return svg(360, 720, label, body, ANIM_CSS)
+    return svg(360, 640, label, body, ANIM_CSS)  # bottom 80 units of foreground snow cropped
 
 
 def signs(lang, theme):
@@ -250,148 +250,158 @@ def signs(lang, theme):
 
 
 # ---------------------------------------------------------------- sections
-def card(colors, label, title, tag, text, theme):
-    """Section text: time pill and label, title, tag, then the description wrapped to fit beside the scene."""
-    c = GH[theme]
-    stops = "".join(f'<stop offset="{k / (len(colors) - 1)}" stop-color="{col}"/>' for k, col in enumerate(colors))
-    lines = wrap(text, 54)
-    h = 104 + (len(lines) - 1) * 23 + 12
-    body = (f'<defs><linearGradient id="g" x1="0" x2="1">{stops}</linearGradient></defs>'
-            f'<rect x="0" y="6" width="40" height="18" rx="9" fill="url(#g)"/>' +
-            T(50, 21, label, 14, c["muted"], 600, MONO) +
-            T(0, 56, title, 22, c["fg"], 700, SORA) + T(0, 78, tag, 12.5, c["muted"], 400, MONO))
-    body += "".join(T(0, 104 + k * 23, l, 14.5, c["fg"], 300, SORA) for k, l in enumerate(lines))
-    return svg(440, h, f"{label}. {title}. {tag}. {text}", body)
+# Each section is ONE image: a 560x330 scene on one side, its text on the other.
+# One image keeps the layout side by side on GitHub mobile and lets the scene texts stay readable.
+SCENE_W, SCENE_H, GAP, SEC_W = 560, 330, 30, 1000
+SCALE = 0.8  # scenes are drawn at 560x330 and shown at 80% so the section stays short
+SHOWN_W, SHOWN_H = round(SCENE_W * SCALE), round(SCENE_H * SCALE)
+TEXT_W = SEC_W - SHOWN_W - GAP
 
 
-def project_card(key, lang, theme):
-    h = next(x for x in HOURS if x["key"] == key)
-    d = PROJECTS[key]
-    return card(h["colors"], f'{h["label"]} · {tr(h["what"], lang)}', tr(d["title"], lang), tr(d["tag"], lang),
-                tr(d["text"], lang), theme)
+def scene_lysbor(lang, p):
+    o = T(20, 28, tr(TEXTS["lys_in"], lang), 12.5, p["sub"]) + T(280, 28, tr(TEXTS["lys_out"], lang), 12.5, p["sub"])
+    o += f'<rect x="20" y="44" width="240" height="266" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
+    for k, w in enumerate([170, 120, 200, 90, 180, 140, 205, 100, 160, 130]):
+        o += f'<rect x="40" y="{66 + k * 24}" width="{w}" height="9" rx="4.5" fill="{p["alert"] if k in (2, 5, 8) else p["bar"]}"/>'
+    o += f'<rect class="scanbeam" x="20" y="46" width="240" height="12" fill="{p["accent"]}" opacity=".35"/>'
+    cols = [p["alert"], p["alert"], p["amber"]]
+    for k, row in enumerate(TEXTS["lys_rows"]):
+        a, b = tr(row, lang)
+        y = 44 + k * 90
+        o += (f'<g class="row" style="animation-delay:{k * .35}s"><rect x="280" y="{y}" width="260" height="76" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
+              f'<circle cx="302" cy="{y + 38}" r="8" fill="{cols[k]}"/>' +
+              T(320, y + 34, a, 15, p["ink"], 600, SORA) + T(320, y + 56, b, 12, p["sub"]) + "</g>")
+    return o
 
 
-def reserve_card(lang, theme):
-    return card(["#03060f", "#0b1430", "#1b2b55"], tr(RESERVE["label"], lang), tr(RESERVE["title"], lang),
-                tr(RESERVE["tag"], lang), tr(RESERVE["text"], lang), theme)
+def scene_patchboard(lang, p):
+    o = T(20, 28, tr(TEXTS["pb_in"], lang), 12.5, p["sub"]) + T(290, 28, tr(TEXTS["pb_out"], lang), 12.5, p["sub"])
+    for k in range(6):
+        x, y = 30 + (k % 3) * 80, 60 + (k // 3) * 116
+        o += (f'<g class="csv" style="--dx:{300 - x}px;animation-delay:{k * .12}s"><rect x="{x}" y="{y}" width="60" height="78" rx="8" fill="{p["panel"]}" stroke="{p["line"]}"/>'
+              f'<text x="{x + 30}" y="{y + 45}" text-anchor="middle" font-family="{MONO}" font-size="14" font-weight="600" fill="{p["sub"]}">CSV</text></g>')
+    o += (f'<g class="fi"><rect x="290" y="44" width="250" height="266" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>' +
+          T(310, 114, "18", 54, p["alert"], 800, SORA) + T(384, 94, tr(TEXTS["pb_computers"], lang), 16, p["ink"], 600, SORA) +
+          T(384, 116, tr(TEXTS["pb_update"], lang), 15, p["sub"], 400, SORA) + "</g>")
+    for k, (lab, v, col) in enumerate([(TEXTS["pb_bars"][0], .9, p["ok"]), (TEXTS["pb_bars"][1], .6, p["amber"]), (TEXTS["pb_bars"][2], .3, p["alert"])]):
+        o += f'<g class="fi">{T(310, 176 + k * 40, tr(lab, lang), 13, p["sub"])}</g>'
+        o += f'<rect class="gr" x="420" y="{166 + k * 40}" width="{v * 104}" height="12" rx="6" fill="{col}"/>'
+    o += (f'<g class="ml"><rect x="470" y="268" width="40" height="28" rx="5" fill="{p["accent"]}"/>'
+          f'<path d="M470 270 l20 14 20 -14" fill="none" stroke="{p["panel"]}" stroke-width="2.5"/></g>')
+    return o
 
 
-def paragraph(text, theme):
-    c = GH[theme]
-    lines = wrap(text, 80)
-    body = "".join(T(0, 20 + k * 26, l, 16, c["fg"], 300, SORA) for k, l in enumerate(lines))
-    return svg(860, len(lines) * 26 + 8, text, body)
-
-
-def frame(inner, label, theme, h=380):
-    p = P[theme]
-    body = (f'<defs><clipPath id="c"><rect width="900" height="{h}" rx="16"/></clipPath></defs>'
-            f'<g clip-path="url(#c)"><rect width="900" height="{h}" fill="{p["mat"]}"/>{inner}</g>')
-    if h == 380:
-        return svg(900, 330, label, body, ANIM_CSS, vy=24)
-    return svg(900, h, label, body, ANIM_CSS)
-
-
-def art_lysbor(lang, theme):
-    p = P[theme]
-    rows = [(TEXTS["lys_rows"][0], p["alert"]), (TEXTS["lys_rows"][1], p["alert"]), (TEXTS["lys_rows"][2], p["amber"])]
-    inner = T(40, 44, tr(TEXTS["lys_in"], lang), 12, p["sub"]) + T(470, 44, tr(TEXTS["lys_out"], lang), 12, p["sub"])
-    inner += f'<rect x="40" y="62" width="400" height="280" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
-    for k, w in enumerate([220, 160, 280, 120, 240, 190, 300, 140, 210, 170, 230]):
-        inner += f'<rect x="64" y="{82 + k * 23}" width="{w}" height="8" rx="4" fill="{p["alert"] if k in (2, 5, 8) else p["bar"]}"/>'
-    inner += f'<rect class="scanbeam" x="40" y="64" width="400" height="12" fill="{p["accent"]}" opacity=".35"/>'
-    for k, (r, col) in enumerate(rows):
-        a, b = tr(r, lang)
-        inner += (f'<g class="row" style="animation-delay:{k * .35}s"><rect x="470" y="{70 + k * 92}" width="390" height="76" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
-                  f'<circle cx="498" cy="{108 + k * 92}" r="8" fill="{col}"/>' +
-                  T(520, 102 + k * 92, a, 16, p["ink"], 600, SORA) + T(520, 126 + k * 92, b, 12.5, p["sub"]) + "</g>")
-    return frame(inner, tr(TEXTS["lys_alt"], lang), theme)
-
-
-def art_patchboard(lang, theme):
-    p = P[theme]
-    inner = T(40, 44, tr(TEXTS["pb_in"], lang), 12, p["sub"]) + T(480, 44, tr(TEXTS["pb_out"], lang), 12, p["sub"])
-    for k in range(8):
-        x, y = 50 + (k % 4) * 96, 80 + (k // 4) * 120
-        inner += (f'<g class="csv" style="--dx:{440 - x}px;animation-delay:{k * .12}s"><rect x="{x}" y="{y}" width="66" height="86" rx="8" fill="{p["panel"]}" stroke="{p["line"]}"/>'
-                  f'<text x="{x + 33}" y="{y + 50}" text-anchor="middle" font-family="{MONO}" font-size="13" font-weight="600" fill="{p["sub"]}">CSV</text></g>')
-    inner += (f'<g class="fi"><rect x="480" y="62" width="380" height="280" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>' +
-              T(506, 140, "18", 58, p["alert"], 800, SORA) + T(590, 118, tr(TEXTS["pb_computers"], lang), 16, p["ink"], 600, SORA) +
-              T(590, 140, tr(TEXTS["pb_update"], lang), 15, p["sub"], 400, SORA) + "</g>")
-    for k, (lab, v, col) in enumerate([(TEXTS["pb_bars"][0], .72, p["ok"]), (TEXTS["pb_bars"][1], .48, p["amber"]), (TEXTS["pb_bars"][2], .22, p["alert"])]):
-        inner += f'<g class="fi">{T(506, 198 + k * 40, tr(lab, lang), 12, p["sub"])}</g>'
-        inner += f'<rect class="gr" x="620" y="{188 + k * 40}" width="{v * 200}" height="12" rx="6" fill="{col}"/>'
-    inner += (f'<g class="ml"><rect x="770" y="292" width="44" height="30" rx="5" fill="{p["accent"]}"/>'
-              f'<path d="M770 294 l22 16 22 -16" fill="none" stroke="{p["panel"]}" stroke-width="2.5"/></g>')
-    return frame(inner, tr(TEXTS["pb_alt"], lang), theme)
-
-
-def art_lowsper(lang, theme):
-    p = P[theme]
-    inner = T(40, 44, tr(TEXTS["lw_in"], lang), 12, p["sub"]) + T(400, 44, tr(TEXTS["lw_out"], lang), 12, p["sub"])
+def scene_lowsper(lang, p):
+    o = T(20, 28, tr(TEXTS["lw_in"], lang), 12.5, p["sub"]) + T(270, 28, tr(TEXTS["lw_out"], lang), 12.5, p["sub"])
     for k, who in enumerate(TEXTS["lw_people"]):
         col = p["violet"] if k else p["accent"]
-        inner += (f'<g transform="translate(40 {66 + k * 140})"><rect width="330" height="116" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
-                  f'<circle cx="42" cy="58" r="24" fill="{col}"/>' + T(80, 34, tr(who, lang), 12, p["sub"]))
-        for j in range(16):
-            inner += (f'<rect class="wv" x="{82 + j * 14}" y="48" width="7" height="44" rx="3.5" fill="{col}" '
-                      f'style="animation-delay:{((j * 37 + k * 50) % 100) / 100}s"/>')
-        inner += "</g>"
-    inner += f'<rect x="400" y="62" width="460" height="280" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
+        o += (f'<g transform="translate(20 {44 + k * 146})"><rect width="230" height="120" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
+              f'<circle cx="36" cy="64" r="20" fill="{col}"/>' + T(66, 30, tr(who, lang), 13, p["sub"]))
+        for j in range(11):
+            o += (f'<rect class="wv" x="{68 + j * 14}" y="46" width="7" height="50" rx="3.5" fill="{col}" '
+                  f'style="animation-delay:{((j * 37 + k * 50) % 100) / 100}s"/>')
+        o += "</g>"
+    o += f'<rect x="270" y="44" width="270" height="266" rx="12" fill="{p["panel"]}" stroke="{p["line"]}"/>'
     for k, (time, who, line) in enumerate(TEXTS["lw_lines"]):
-        inner += (f'<g class="tl" style="animation-delay:{k * 1.2}s">' + T(424, 102 + k * 52, f"[{time}] {tr(who, lang)}", 12, p["sub"]) +
-                  T(424, 124 + k * 52, tr(line, lang), 16, p["ink"], 400, SORA) + "</g>")
-    inner += (f'<rect x="630" y="300" width="214" height="28" rx="14" fill="{p["ok"]}" opacity=".16"/>' +
-              T(646, 319, tr(TEXTS["lw_local"], lang), 12, p["ok"]))
-    return frame(inner, tr(TEXTS["lw_alt"], lang), theme)
+        o += (f'<g class="tl" style="animation-delay:{k * 1.2}s">' + T(288, 74 + k * 54, f"[{time}] {tr(who, lang)}", 12, p["sub"]) +
+              T(288, 95 + k * 54, tr(line, lang), 15, p["ink"], 400, SORA) + "</g>")
+    o += (f'<rect x="288" y="280" width="234" height="22" rx="11" fill="{p["ok"]}" opacity=".16"/>' +
+          T(302, 295, tr(TEXTS["lw_local"], lang), 12, p["ok"]))
+    return o
 
 
-def art_labo(lang, theme):
-    p = P[theme]
-    photo = ('<rect x="40" y="62" width="480" height="280" fill="url(#ph)"/>'
-             '<path d="M40 170 C 160 110, 280 200, 400 140 S 520 120, 540 150 L 540 190 C 420 170, 300 240, 180 200 S 60 200, 40 220Z" fill="url(#au)" filter="url(#bl)"/>'
-             '<path d="M40 300 L140 250 L230 278 L330 236 L430 270 L520 246 L520 342 L40 342Z" fill="#050a14"/>')
-    inner = ('<defs><linearGradient id="ph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1430"/><stop offset="1" stop-color="#24366a"/></linearGradient>'
-             '<linearGradient id="au" x1="0" x2="1"><stop offset="0" stop-color="#43f5b5" stop-opacity="0"/><stop offset=".5" stop-color="#43f5b5"/><stop offset="1" stop-color="#a28bff" stop-opacity="0"/></linearGradient>'
-             '<filter id="bl"><feGaussianBlur stdDeviation="9"/></filter><clipPath id="k"><rect x="40" y="62" width="480" height="280" rx="10"/></clipPath>'
-             '<clipPath id="r"><rect class="splitl" x="40" y="62" width="160" height="280"/></clipPath></defs>')
-    inner += T(40, 44, tr(TEXTS["lb_in"], lang), 12, p["sub"]) + T(560, 44, tr(TEXTS["lb_out"], lang), 12, p["sub"])
-    inner += (f'<g clip-path="url(#k)"><g>{photo}</g><g clip-path="url(#r)" style="filter:brightness(.55) saturate(.4)">{photo}</g>'
-              '<rect class="splitl" x="198" y="62" width="3" height="280" fill="#fff"/></g>')
+def scene_labo(lang, p):
+    photo = ('<rect x="20" y="44" width="300" height="266" fill="url(#ph)"/>'
+             '<path d="M20 140 C 100 90, 180 170, 260 110 S 330 100, 340 120 L 340 160 C 260 140, 180 210, 100 170 S 30 170, 20 190Z" fill="url(#au)" filter="url(#bl)"/>'
+             '<path d="M20 270 L90 232 L150 252 L220 214 L290 246 L320 230 L320 310 L20 310Z" fill="#050a14"/>')
+    o = ('<defs><linearGradient id="ph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1430"/><stop offset="1" stop-color="#24366a"/></linearGradient>'
+         '<linearGradient id="au" x1="0" x2="1"><stop offset="0" stop-color="#43f5b5" stop-opacity="0"/><stop offset=".5" stop-color="#43f5b5"/><stop offset="1" stop-color="#a28bff" stop-opacity="0"/></linearGradient>'
+         '<filter id="bl"><feGaussianBlur stdDeviation="8"/></filter><clipPath id="k"><rect x="20" y="44" width="300" height="266" rx="10"/></clipPath>'
+         '<clipPath id="r"><rect class="splitl" x="20" y="44" width="100" height="266"/></clipPath></defs>')
+    o += T(20, 28, tr(TEXTS["lb_in"], lang), 12.5, p["sub"]) + T(336, 28, tr(TEXTS["lb_out"], lang), 12.5, p["sub"])
+    o += (f'<g clip-path="url(#k)"><g>{photo}</g><g clip-path="url(#r)" style="filter:brightness(.55) saturate(.4)">{photo}</g>'
+          '<rect class="splitl" x="118" y="44" width="3" height="266" fill="#fff"/></g>')
     cols = [p["accent"], p["ok"], p["amber"], p["violet"]]
     for k, tag in enumerate(TEXTS["lb_tags"]):
-        inner += (f'<g class="tg" style="animation-delay:{k * .5}s"><rect x="560" y="{70 + k * 52}" width="300" height="40" rx="20" fill="{p["panel"]}" stroke="{p["line"]}"/>'
-                  f'<circle cx="584" cy="{90 + k * 52}" r="6" fill="{cols[k]}"/>' + T(600, 95 + k * 52, tr(tag, lang), 14, p["ink"], 600, SORA) + "</g>")
-    inner += (f'<rect x="560" y="290" width="300" height="52" rx="12" fill="{p["panel"]}" stroke="{p["accent"]}"/>' +
-              T(580, 313, tr(TEXTS["lb_mcp"], lang), 12, p["accent"], 600) + T(580, 332, tr(TEXTS["lb_mcp2"], lang), 12, p["sub"]))
-    return frame(inner, tr(TEXTS["lb_alt"], lang), theme)
+        y = 44 + k * 54
+        o += (f'<g class="tg" style="animation-delay:{k * .5}s"><rect x="336" y="{y}" width="210" height="42" rx="21" fill="{p["panel"]}" stroke="{p["line"]}"/>'
+              f'<circle cx="358" cy="{y + 21}" r="6" fill="{cols[k]}"/>' + T(372, y + 26, tr(tag, lang), 13.5, p["ink"], 600, SORA) + "</g>")
+    o += (f'<rect x="336" y="264" width="210" height="46" rx="12" fill="{p["panel"]}" stroke="{p["accent"]}"/>' +
+          T(350, 283, tr(TEXTS["lb_mcp"], lang), 12.5, p["accent"], 600) + T(350, 301, tr(TEXTS["lb_mcp2"], lang), 12, p["sub"]))
+    return o
 
 
-def art_aurion(lang, theme):
-    inner = (f'<image href="{jpeg("aurion.jpg")}" x="0" y="-61" width="900" height="502"/>'
-             '<g class="tg"><rect x="330" y="236" width="196" height="38" rx="19" fill="#06101f" fill-opacity=".72" stroke="#43f5b5" stroke-opacity=".7"/>'
-             '<circle class="pu" cx="352" cy="255" r="6" fill="#43f5b5"/>' + T(368, 260, tr(TEXTS["au_detect"], lang), 13, "#dff7f1", 600) + "</g>")
+def scene_aurion(lang, p):
+    o = (f'<image href="{jpeg("aurion.jpg")}" width="{SCENE_W}" height="{SCENE_H}" preserveAspectRatio="xMidYMid slice"/>'
+         '<g class="tg"><rect x="200" y="200" width="200" height="34" rx="17" fill="#06101f" fill-opacity=".75" stroke="#43f5b5" stroke-opacity=".7"/>'
+         '<circle class="pu" cx="220" cy="217" r="6" fill="#43f5b5"/>' + T(234, 222, tr(TEXTS["au_detect"], lang), 14, "#dff7f1", 600) + "</g>")
     for k, rank in enumerate(TEXTS["au_ranks"]):
-        inner += (f'<g class="th" style="animation-delay:{k * .4}s"><rect x="640" y="{22 + k * 54}" width="236" height="44" rx="8" fill="#06101f" fill-opacity=".72" stroke="#43f5b5" stroke-opacity="{.85 - k * .25}"/>'
-                  f'<rect x="650" y="{29 + k * 54}" width="50" height="30" rx="4" fill="#12305a"/>'
-                  f'<path d="M652 {52 + k * 54} q12 -14 24 -5 t22 -7" stroke="#43f5b5" stroke-opacity="{1 - k * .3}" stroke-width="3" fill="none"/>' +
-                  T(712, 50 + k * 54, f"#{k + 1} · {tr(rank, lang)}", 12.5, "#d6efec") + "</g>")
-    return frame(inner, tr(TEXTS["au_alt"], lang), theme)
+        y = 16 + k * 50
+        o += (f'<g class="th" style="animation-delay:{k * .4}s"><rect x="344" y="{y}" width="200" height="42" rx="8" fill="#06101f" fill-opacity=".75" stroke="#43f5b5" stroke-opacity="{.85 - k * .25}"/>'
+              f'<rect x="352" y="{y + 7}" width="44" height="28" rx="4" fill="#12305a"/>'
+              f'<path d="M354 {y + 29} q10 -12 20 -4 t18 -6" stroke="#43f5b5" stroke-opacity="{1 - k * .3}" stroke-width="3" fill="none"/>' +
+              T(404, y + 27, f"#{k + 1} · {tr(rank, lang)}", 13.5, "#d6efec") + "</g>")
+    return o
 
 
-def art_reserve(lang, theme):
-    inner = (f'<image href="{jpeg("reserve.jpg")}" x="0" y="-60" width="900" height="502"/>'
-             '<defs><linearGradient id="veil" x1="0" x2="1"><stop offset="0" stop-color="#02050c" stop-opacity=".62"/>'
-             '<stop offset=".38" stop-color="#02050c" stop-opacity=".4"/><stop offset=".6" stop-color="#02050c" stop-opacity="0"/></linearGradient></defs>'
-             '<rect width="900" height="260" fill="url(#veil)"/>' + T(32, 34, tr(RESERVE["badge"], lang), 12, "#f3d27a", 600))
+def scene_reserve(lang, p):
+    o = (f'<image href="{jpeg("reserve.jpg")}" width="{SCENE_W}" height="{SCENE_H}" preserveAspectRatio="xMidYMid slice"/>'
+         '<defs><linearGradient id="veil" x1="0" x2="1"><stop offset="0" stop-color="#02050c" stop-opacity=".7"/>'
+         '<stop offset=".45" stop-color="#02050c" stop-opacity=".4"/><stop offset=".65" stop-color="#02050c" stop-opacity="0"/></linearGradient></defs>'
+         f'<rect width="{SCENE_W}" height="{SCENE_H}" fill="url(#veil)"/>' + T(20, 34, tr(RESERVE["badge"], lang), 13, "#f3d27a", 600))
     for k, tag in enumerate(RESERVE["tags"]):
-        inner += (f'<rect x="32" y="{48 + k * 41}" width="300" height="33" rx="7" fill="#fbf3df" fill-opacity=".94"/>'
-                  f'<circle cx="50" cy="{64.5 + k * 41}" r="4.5" fill="#9b2a1f"/>' + T(64, 69 + k * 41, tr(tag, lang), 13.5, "#2a1a10", 600, SORA))
-    label = tr(RESERVE["alt"], lang) + ", ".join(tr(t, lang) for t in RESERVE["tags"])
-    return frame(inner, label, theme, 260)
+        y = 50 + k * 54
+        o += (f'<rect x="20" y="{y}" width="250" height="40" rx="8" fill="#fbf3df" fill-opacity=".94"/>'
+              f'<circle cx="40" cy="{y + 20}" r="5" fill="#9b2a1f"/>' + T(54, y + 25, tr(tag, lang), 14.5, "#2a1a10", 600, SORA))
+    return o
 
 
-ARTS = {"lowsper": art_lowsper, "lysbor": art_lysbor, "patchboard": art_patchboard, "labo": art_labo, "aurion": art_aurion}
+SCENES = {"lowsper": scene_lowsper, "lysbor": scene_lysbor, "patchboard": scene_patchboard,
+          "labo": scene_labo, "aurion": scene_aurion, "reserve": scene_reserve}
+SCENE_ALT = {"lowsper": TEXTS["lw_alt"], "lysbor": TEXTS["lys_alt"], "patchboard": TEXTS["pb_alt"],
+             "labo": TEXTS["lb_alt"], "aurion": TEXTS["au_alt"], "reserve": RESERVE["alt"]}
+RESERVE_COLORS = ["#03060f", "#0b1430", "#1b2b55"]
+
+
+def section_data(key, lang):
+    """Label, title, tag and text of a section."""
+    if key == "reserve":
+        return (tr(RESERVE["label"], lang), tr(RESERVE["title"], lang), tr(RESERVE["tag"], lang),
+                tr(RESERVE["text"], lang), RESERVE_COLORS)
+    h = next(x for x in HOURS if x["key"] == key)
+    d = PROJECTS[key]
+    return (f'{h["label"]} · {tr(h["what"], lang)}', tr(d["title"], lang), tr(d["tag"], lang), tr(d["text"], lang),
+            h["colors"])
+
+
+def section_alt(key, lang):
+    label, title, tag, text, _ = section_data(key, lang)
+    scene = tr(SCENE_ALT[key], lang) + (", ".join(tr(t, lang) for t in RESERVE["tags"]) if key == "reserve" else "")
+    return f"{label}. {title}. {tag}. {text} {scene}"
+
+
+def section(key, lang, theme, scene_left):
+    c, p = GH[theme], P[theme]
+    label, title, tag, text, colors = section_data(key, lang)
+    lines = wrap(text, 57)
+    height = max(SHOWN_H, 142 + (len(lines) - 1) * 26 + 14)
+    sx = 0 if scene_left else TEXT_W + GAP
+    tx = SHOWN_W + GAP if scene_left else 0
+    stops = "".join(f'<stop offset="{k / (len(colors) - 1)}" stop-color="{col}"/>' for k, col in enumerate(colors))
+    body = (f'<defs><linearGradient id="g" x1="0" x2="1">{stops}</linearGradient>'
+            f'<clipPath id="sc"><rect width="{SCENE_W}" height="{SCENE_H}" rx="16"/></clipPath></defs>'
+            f'<g transform="translate({sx} {(height - SHOWN_H) // 2}) scale({SCALE})"><g clip-path="url(#sc)">'
+            f'<rect width="{SCENE_W}" height="{SCENE_H}" fill="{p["mat"]}"/>{SCENES[key](lang, p)}</g></g>'
+            f'<g transform="translate({tx} 0)">'
+            f'<rect x="0" y="12" width="44" height="20" rx="10" fill="url(#g)"/>' +
+            T(56, 28, label, 15, c["muted"], 600, MONO) +
+            T(0, 74, title, 28, c["fg"], 700, SORA) + T(0, 102, tag, 14, c["muted"], 400, MONO) +
+            "".join(T(0, 142 + k * 26, l, 17, c["fg"], 300, SORA) for k, l in enumerate(lines)) + "</g>")
+    return svg(SEC_W, height, section_alt(key, lang), body, ANIM_CSS)
+
+
+SECTION_KEYS = [h["key"] for h in HOURS] + ["reserve"]
+
 
 
 # ---------------------------------------------------------------- README
@@ -426,34 +436,22 @@ def readme(lang):
         out.append("")
     out.append("</details>")
     out.append("")
-    # one block per time slot, then the vault: scene on one side, text on the other (zigzag)
-    blocks = [dict(key=h["key"], art=(f'art-{h["key"]}-{lang}.svg' if h["key"] == "aurion" else f'art-{h["key"]}-{lang}-dark.svg'),
-                   art_alt=L(ARTS_ALT[h["key"]]), card=f'card-{h["key"]}-{lang}-dark.svg',
-                   card_alt=f'{h["label"]} · {L(h["what"])}. {L(PROJECTS[h["key"]]["title"])}. {L(PROJECTS[h["key"]]["tag"])}. {L(PROJECTS[h["key"]]["text"])}',
-                   href=PROJECTS[h["key"]]["href"], link=L(PROJECTS[h["key"]]["link"]), tech=L(PROJECTS[h["key"]]["tech"]))
-              for h in HOURS]
-    blocks.append(dict(key="reserve", art=f"art-reserve-{lang}.svg",
-                       art_alt=L(RESERVE["alt"]) + ", ".join(L(t) for t in RESERVE["tags"]),
-                       card=f"card-reserve-{lang}-dark.svg",
-                       card_alt=f'{L(RESERVE["label"])}. {L(RESERVE["title"])}. {L(RESERVE["tag"])}. {L(RESERVE["text"])}',
-                       href=f"mailto:{CONTACT}?subject=Demo", link=L(RESERVE["link"]), tech=L(RESERVE["tech"])))
-    for k, bl in enumerate(blocks):
-        side = "left" if k % 2 == 0 else "right"
-        out.append(f'<a id="{bl["key"]}"></a>')
-        img = f'<img align="{side}" width="50%" src="assets/sections/{bl["art"]}" alt="{esc(bl["art_alt"])}">'
-        # a bare <img> gets wrapped in a link to the file; <picture> avoids it
-        out.append(img if bl["art"].endswith("-dark.svg") else f"<picture>{img}</picture>")
-        out.append(f'<img width="46%" src="assets/sections/{bl["card"]}" alt="{esc(bl["card_alt"])}">')
+    # one image per section (scene + text side by side, zigzag), then a fold with the searchable details
+    for k, key in enumerate(SECTION_KEYS):
+        if key == "reserve":
+            href, link, tech = f"mailto:{CONTACT}?subject=Demo", L(RESERVE["link"]), L(RESERVE["tech"])
+        else:
+            d = PROJECTS[key]
+            href, link, tech = d["href"], L(d["link"]), L(d["tech"])
+        out.append(f'<a id="{key}"></a>')
+        out.append(f'<img width="100%" src="assets/sections/section-{key}-{lang}-dark.svg" alt="{esc(section_alt(key, lang))}">')
         out.append("")
-        out.append(f'<details><summary><b>{L(HEADINGS["tech"])}</b> · <a href="{bl["href"]}">{bl["link"]} →</a></summary>')
+        out.append(f'<details><summary><b>{L(HEADINGS["tech"])}</b> · <a href="{href}">{link} →</a></summary>')
         out.append("")
-        out.append(bl["tech"])
+        out.append(tech)
         out.append("")
         out.append("</details>")
-        out.append('<br clear="all">')
         out.append("")
-    out.append(f'<img width="100%" src="assets/sections/text-talk-{lang}-dark.svg" alt="{esc(L(TALK))}">')
-    out.append("")
     text = "\n".join(out)
     # every themed image becomes a <picture> so it follows the GitHub theme
     def themed(m):
@@ -469,10 +467,6 @@ def readme(lang):
     return text + "\n"
 
 
-ARTS_ALT = {"lowsper": TEXTS["lw_alt"], "lysbor": TEXTS["lys_alt"], "patchboard": TEXTS["pb_alt"],
-            "labo": TEXTS["lb_alt"], "aurion": TEXTS["au_alt"]}
-
-
 def main():
     for lang in LANGS:
         write(f"assets/header/lang-{lang}.svg", lang_pill(lang))
@@ -480,19 +474,13 @@ def main():
         for i in range(5):
             write(f"assets/live-src/slice-{i}-{lang}.svg", slice_svg(i, lang, False))
             write(f"assets/live-src/slice-{i}-{lang}-now.svg", slice_svg(i, lang, True))
-        write(f"assets/sections/art-reserve-{lang}.svg", art_reserve(lang, "dark"))
-        write(f"assets/sections/art-aurion-{lang}.svg", art_aurion(lang, "dark"))
         for theme in THEMES:
             write(f"assets/header/banner-{lang}-{theme}.svg", banner(lang, theme))
             write(f"assets/header/signs-{lang}-{theme}.svg", signs(lang, theme))
             for slot in SLOTS:
                 write(f"assets/live-src/nowline-{slot}-{lang}-{theme}.svg", nowline(slot, lang, theme))
-            for h in HOURS:
-                write(f"assets/sections/card-{h['key']}-{lang}-{theme}.svg", project_card(h["key"], lang, theme))
-                if h["key"] != "aurion":  # a night photo: the same in both themes
-                    write(f"assets/sections/art-{h['key']}-{lang}-{theme}.svg", ARTS[h["key"]](lang, theme))
-            write(f"assets/sections/card-reserve-{lang}-{theme}.svg", reserve_card(lang, theme))
-            write(f"assets/sections/text-talk-{lang}-{theme}.svg", paragraph(tr(TALK, lang), theme))
+            for k, key in enumerate(SECTION_KEYS):
+                write(f"assets/sections/section-{key}-{lang}-{theme}.svg", section(key, lang, theme, k % 2 == 0))
     write("assets/header/linkedin.svg", btn_linkedin())
     write("README.md", readme("en"))
     write("README.fr.md", readme("fr"))
