@@ -252,8 +252,10 @@ def signs(lang, theme):
 # ---------------------------------------------------------------- sections
 # Each section is ONE image: a 560x330 scene on one side, its text on the other.
 # One image keeps the layout side by side on GitHub mobile and lets the scene texts stay readable.
-SCENE_W, SCENE_H, TEXT_W, GAP = 560, 330, 410, 30
-SEC_W = SCENE_W + GAP + TEXT_W
+SCENE_W, SCENE_H, GAP, SEC_W = 560, 330, 30, 1000
+SCALE = 0.8  # scenes are drawn at 560x330 and shown at 80% so the section stays short
+SHOWN_W, SHOWN_H = round(SCENE_W * SCALE), round(SCENE_H * SCALE)
+TEXT_W = SEC_W - SHOWN_W - GAP
 
 
 def scene_lysbor(lang, p):
@@ -381,15 +383,15 @@ def section_alt(key, lang):
 def section(key, lang, theme, scene_left):
     c, p = GH[theme], P[theme]
     label, title, tag, text, colors = section_data(key, lang)
-    lines = wrap(text, 45)
-    height = max(SCENE_H, 142 + (len(lines) - 1) * 26 + 14)
+    lines = wrap(text, 57)
+    height = max(SHOWN_H, 142 + (len(lines) - 1) * 26 + 14)
     sx = 0 if scene_left else TEXT_W + GAP
-    tx = SCENE_W + GAP if scene_left else 0
+    tx = SHOWN_W + GAP if scene_left else 0
     stops = "".join(f'<stop offset="{k / (len(colors) - 1)}" stop-color="{col}"/>' for k, col in enumerate(colors))
     body = (f'<defs><linearGradient id="g" x1="0" x2="1">{stops}</linearGradient>'
             f'<clipPath id="sc"><rect width="{SCENE_W}" height="{SCENE_H}" rx="16"/></clipPath></defs>'
-            f'<g transform="translate({sx} {(height - SCENE_H) // 2})" clip-path="url(#sc)">'
-            f'<rect width="{SCENE_W}" height="{SCENE_H}" fill="{p["mat"]}"/>{SCENES[key](lang, p)}</g>'
+            f'<g transform="translate({sx} {(height - SHOWN_H) // 2}) scale({SCALE})"><g clip-path="url(#sc)">'
+            f'<rect width="{SCENE_W}" height="{SCENE_H}" fill="{p["mat"]}"/>{SCENES[key](lang, p)}</g></g>'
             f'<g transform="translate({tx} 0)">'
             f'<rect x="0" y="12" width="44" height="20" rx="10" fill="url(#g)"/>' +
             T(56, 28, label, 15, c["muted"], 600, MONO) +
