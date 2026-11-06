@@ -75,7 +75,7 @@ A single HTML file, zero dependencies, works offline · consolidates EPO (antivi
 
 <details><summary><b>Technical details</b></summary>
 
-In-house editing engine · interface built on ArtCraft (LightCraft, PhotoCraft…) · video playback and editing with FFmpeg · MCP server to plug in a local or external AI · automatic sorting and tagging · open source micro-models (4 to 279 MB) for people detection, power line and cable detection, and image area reconstruction · 100% local.
+In-house editing engine · interface built on ArtCraft (LightCraft, PhotoCraft…) · video playback and editing with FFmpeg · MCP server to plug in a local or external AI · automatic sorting and tagging · open source micro-models (4 to 279 MB): people detection · power line and cable detection · image area reconstruction · 100% local.
 
 </details>
 <br clear="all">

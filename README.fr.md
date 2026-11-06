@@ -75,7 +75,7 @@ Un seul fichier HTML, zéro dépendance, fonctionne hors ligne · consolidation 
 
 <details><summary><b>Détails techniques</b></summary>
 
-Moteur de retouche maison · interface basée sur ArtCraft (LightCraft, PhotoCraft…) · lecture et montage vidéo via FFmpeg · serveur MCP pour brancher une IA locale ou externe · tri et étiquetage automatiques · micro-modèles open source (de 4 à 279 Mo) pour la détection de personnes, la détection de câbles et fils électriques, et la reconstruction de zones d'image · 100 % local.
+Moteur de retouche maison · interface basée sur ArtCraft (LightCraft, PhotoCraft…) · lecture et montage vidéo via FFmpeg · serveur MCP pour brancher une IA locale ou externe · tri et étiquetage automatiques · micro-modèles open source (de 4 à 279 Mo) : détection de personnes · détection de câbles et fils électriques · reconstruction de zones d'image · 100 % local.
 
 </details>
 <br clear="all">

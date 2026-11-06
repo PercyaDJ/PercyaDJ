@@ -129,12 +129,12 @@ PROJECTS = {
                  "répétitif à ma place. Tout tourne en local."),
         "tech": ("In-house editing engine · interface built on ArtCraft (LightCraft, PhotoCraft…) · video playback "
                  "and editing with FFmpeg · MCP server to plug in a local or external AI · automatic sorting and "
-                 "tagging · open source micro-models (4 to 279 MB) for people detection, power line and cable "
-                 "detection, and image area reconstruction · 100% local.",
+                 "tagging · open source micro-models (4 to 279 MB): people detection · power line and cable "
+                 "detection · image area reconstruction · 100% local.",
                  "Moteur de retouche maison · interface basée sur ArtCraft (LightCraft, PhotoCraft…) · lecture et "
                  "montage vidéo via FFmpeg · serveur MCP pour brancher une IA locale ou externe · tri et étiquetage "
-                 "automatiques · micro-modèles open source (de 4 à 279 Mo) pour la détection de personnes, la "
-                 "détection de câbles et fils électriques, et la reconstruction de zones d'image · 100 % local."),
+                 "automatiques · micro-modèles open source (de 4 à 279 Mo) : détection de personnes · détection de "
+                 "câbles et fils électriques · reconstruction de zones d'image · 100 % local."),
         "link": ("Request a demo", "Demander une démo"),
         "href": "mailto:jolan@norkenix.com?subject=Demo%20photo%20lab",
     },

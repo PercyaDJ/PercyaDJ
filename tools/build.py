@@ -100,8 +100,10 @@ def font_face(family, chars):
         sub = subset.Subsetter(opts)
         sub.populate(text=chars + " ")
         sub.subset(font)
+        font["head"].modified = font["head"].created  # keep the output identical from one build to the next
         buf = io.BytesIO()
         font.flavor = "woff2"
+        font.recalcTimestamp = False
         font.save(buf)
         data = base64.b64encode(buf.getvalue()).decode()
         _font_cache[key] = (f"@font-face{{font-family:'{family}';font-weight:100 900;"
