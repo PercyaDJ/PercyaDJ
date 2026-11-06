@@ -180,18 +180,13 @@ RESERVE = {
              "données."),
 }
 
-TALK = ("Want to talk? Local AI in compliance, automating NIS2 and CRA deliverables, vulnerability management, "
-        "security architecture. Contact links are at the top.",
-        "Envie d'en parler ? IA locale dans la conformité, automatisation des livrables NIS2 et CRA, gestion des "
-        "vulnérabilités, architecture de sécurité. Les contacts sont tout en haut.")
-
 # texts drawn inside the animations
 TEXTS = {
     "lys_in": ("CODE GOES IN", "LE CODE ENTRE"),
     "lys_out": ("AN ACTION PLAN COMES OUT", "UN PLAN D'ACTION SORT"),
     "lys_rows": [(("Vulnerable library", "Web team · by Friday"), ("Faille dans une librairie", "Équipe web · avant vendredi")),
-                 (("Password left in the code", "Infra team · today"), ("Mot de passe oublié dans le code", "Équipe infra · aujourd'hui")),
-                 (("Must be reported (CRA)", "Security lead · within 24 h"), ("À déclarer (loi CRA)", "Responsable sécurité · sous 24 h"))],
+                 (("Password left in the code", "Infra team · today"), ("Mot de passe dans le code", "Équipe infra · aujourd'hui")),
+                 (("Must be reported (CRA)", "Security lead · within 24 h"), ("À déclarer (loi CRA)", "Resp. sécurité · sous 24 h"))],
     "lys_alt": ("Lysbor: code is reviewed and three issues come out as an action plan with owners and deadlines",
                 "Lysbor : le code est relu et trois problèmes sortent en plan d'action avec responsables et délais"),
     "pb_in": ("30 MESSY FILES", "30 FICHIERS EN VRAC"),
@@ -216,7 +211,7 @@ TEXTS = {
     "lb_tags": [("northern lights", "aurore boréale"), ("sharpness 94%", "netteté 94 %"),
                 ("keep · 5 stars", "à garder · 5 étoiles"), ("video: timelapse ready", "vidéo : timelapse prêt")],
     "lb_mcp": ("MCP server", "serveur MCP"),
-    "lb_mcp2": ("local or external AI plugged in", "IA locale ou externe branchée dessus"),
+    "lb_mcp2": ("local or external AI", "IA locale ou externe"),
     "lb_alt": ("Photo lab: the photo is sorted by an AI, then edited, before and after",
                "Labo photo : la photo est triée par une IA puis retouchée, avant et après"),
     "au_detect": ("aurora detected", "aurore détectée"),
