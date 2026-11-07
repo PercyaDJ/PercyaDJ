@@ -443,7 +443,10 @@ def readme(lang):
         else:
             d = PROJECTS[key]
             href, link, tech = d["href"], L(d["link"]), L(d["tech"])
+        # the anchor needs its own paragraph: inline next to the image it sits on the image's bottom line,
+        # so a jump would land at the end of the section
         out.append(f'<a id="{key}"></a>')
+        out.append("")
         out.append(f'<img width="100%" src="assets/sections/section-{key}-{lang}-dark.svg" alt="{esc(section_alt(key, lang))}">')
         out.append("")
         out.append(f'<details><summary><b>{L(HEADINGS["tech"])}</b> · <a href="{href}">{link} →</a></summary>')

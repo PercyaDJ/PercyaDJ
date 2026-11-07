@@ -21,6 +21,7 @@
 </details>
 
 <a id="lowsper"></a>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/section-lowsper-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/section-lowsper-en-light.svg"><img width="100%" src="assets/sections/section-lowsper-en-dark.svg" alt="08:00 · The meeting. Lowsper. Open source · runs in the browser. During a meeting, Lowsper writes down everything that is said and tells the speakers apart. I walk out with what I need to write the minutes in two minutes. Nothing goes online: everything stays on the computer. Lowsper: two people talk and the transcript writes itself, offline"></picture>
 
 <details><summary><b>Technical details</b> · <a href="https://github.com/PercyaDJ/Lowsper">View the project →</a></summary>
@@ -30,6 +31,7 @@ Whisper in the browser · a single HTML file, no install and no admin rights · 
 </details>
 
 <a id="lysbor"></a>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/section-lysbor-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/section-lysbor-en-light.svg"><img width="100%" src="assets/sections/section-lysbor-en-dark.svg" alt="10:00 · Code ships. Lysbor. SaaS · open demo. When a team writes software, security flaws slip in. Lysbor reviews every new version, finds the flaws and says who must fix what, and by when. It also warns you when European law requires a problem to be reported. Lysbor: code is reviewed and three issues come out as an action plan with owners and deadlines"></picture>
 
 <details><summary><b>Technical details</b> · <a href="https://lysbor.com/">Try the demo →</a></summary>
@@ -39,6 +41,7 @@ CI/CD agent · static code analysis (SAST, Semgrep) · dependency and image scan
 </details>
 
 <a id="patchboard"></a>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/section-patchboard-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/section-patchboard-en-light.svg"><img width="100%" src="assets/sections/section-patchboard-en-dark.svg" alt="14:00 · The reports. PatchBoard. Open source · a single file. Every week, security teams receive dozens of files listing which computers are out of date. PatchBoard takes them all in at once, shows the machines to fix and drafts the emails to warn the right people. PatchBoard: messy files become one dashboard, then an email goes out"></picture>
 
 <details><summary><b>Technical details</b> · <a href="https://github.com/PercyaDJ/PatchBoard">View the project →</a></summary>
@@ -48,6 +51,7 @@ A single HTML file, zero dependencies, works offline · consolidates EPO (antivi
 </details>
 
 <a id="labo"></a>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/section-labo-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/section-labo-en-light.svg"><img width="100%" src="assets/sections/section-labo-en-dark.svg" alt="18:00 · The photo lab. Photo lab. Private project · demo on request. I rebuilt my own photo lab so I no longer depend on Adobe. It sorts photos, edits them and cuts videos. An AI can drive it through an MCP server to handle the repetitive work for me. Everything runs locally. Photo lab: the photo is sorted by an AI, then edited, before and after"></picture>
 
 <details><summary><b>Technical details</b> · <a href="mailto:jolan@norkenix.com?subject=Demo%20photo%20lab">Request a demo →</a></summary>
@@ -57,6 +61,7 @@ In-house editing engine · interface built on ArtCraft (LightCraft, PhotoCraft�
 </details>
 
 <a id="aurion"></a>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/section-aurion-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/section-aurion-en-light.svg"><img width="100%" src="assets/sections/section-aurion-en-dark.svg" alt="22:00 · Northern skies. Aurion. Open source · Raspberry Pi. A small computer and a camera you leave outside at night. It watches the sky on its own, photographs the northern lights and ranks them for the morning. You set it up from your phone, even without internet. Aurion: a Raspberry Pi camera on a tripod photographs the northern lights and ranks the shots"></picture>
 
 <details><summary><b>Technical details</b> · <a href="https://github.com/PercyaDJ/Aurion">View the project →</a></summary>
@@ -66,6 +71,7 @@ Rust · Raspberry Pi 4 or 5 · HQ camera (IMX477 sensor) · built-in Wi-Fi acces
 </details>
 
 <a id="reserve"></a>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/sections/section-reserve-en-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/sections/section-reserve-en-light.svg"><img width="100%" src="assets/sections/section-reserve-en-dark.svg" alt="After midnight. The vault. Closed source · demo on request. Tools built for real engagements. The code stays closed, but I&#x27;m happy to demo them on request. The vault, a locked fisherman&#x27;s cabin at night. Tools shown on request: GDPR and DPIA analysis, Business impact analysis, Security assurance plans, SBOM scripts, Proxmox hardening"></picture>
 
 <details><summary><b>Technical details</b> · <a href="mailto:jolan@norkenix.com?subject=Demo">Request a demo →</a></summary>
